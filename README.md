@@ -1,7 +1,7 @@
-# imzack.me
+# My Website (Life)
 
 <img src="blog/static/blog/img/favicon.ico" align="right"/>
 
-This is the repository of my website.
+This is the repository of my website (Life).
 
-🔗 http://imzack.me
+🔗 https://life.zackzhang.net
