@@ -1,6 +1,6 @@
 # My Website (Life)
 
-<img src="blog/static/blog/img/favicon.ico" align="right"/>
+<img src="posts/static/posts/img/favicon.ico" align="right"/>
 
 This is the repository of my website (Life).
 
