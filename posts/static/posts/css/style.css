@@ -1,0 +1,612 @@
+/* Universal */
+
+/* 对于所有元素 */
+* {
+    font-family: 'Lato', sans-serif;
+    outline: none;
+}
+
+a {
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+::selection {
+  background: #262a30;
+  color: #fff;
+}
+
+.underline {
+    border-bottom: 1px solid #555;
+}
+
+.underline:hover {
+    border-bottom-color: #000;
+}
+
+/* base.html */
+
+.header {
+    padding: 25px 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-menu-icon-bar {
+    float: right;
+}
+
+.header-menu-icon {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 20px;
+    float: left;
+}
+
+.content {
+    /*1em = 16px（对于任何浏览器都是如此）*/
+    padding-bottom: 4em;
+}
+
+.footer {
+    padding: 10px 0 1.5em 0;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
+/* index.html */
+
+.post {
+    /* 上：30，左右：30，下：0 */
+    padding: 30px 30px 0;
+}
+
+.post-title {
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+.post-time {
+    color: #999;
+    font-size: 13px;
+}
+
+.post-excerpt {
+    /* 若 line-height 为数字，真正的行间距 = line-height * 字体尺寸 */
+    line-height: 1.8;
+    margin-top: 16px;
+}
+
+.pagination {
+    width: 100%;
+    text-align: center;
+}
+
+/* 后代选择器（可隔代），即只要 class = "pagination" 的元素包含 a 元素才起作用 */
+.pagination a {
+    margin: 0 5px 0;
+}
+
+.current-page {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* post.html */
+
+.post-content {
+    line-height: 1.8;
+    margin-top: 40px;
+}
+
+.post-content h1 {
+    font-size: 1.5em;
+}
+
+.post-content h2 {
+    font-size: 1.4em;
+}
+
+.post-content h3 {
+    font-size: 1.3em;
+}
+
+.post-content h4 {
+    font-size: 1.2em;
+}
+
+.post-content h5 {
+    font-size: 1.1em;
+}
+
+.post-content h6 {
+    font-size: 1em;
+}
+
+.post-content p {
+    font-weight: 400;
+    word-spacing: 1px;
+    letter-spacing: 0.01em;
+}
+
+.post-content blockquote {
+  font-size: 14px;
+}
+
+.post-content table {
+    border-spacing: 1px;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+.post-content table > thead > tr > th,
+.post-content table > tbody > tr > th,
+.post-content table > tfoot > tr > th,
+.post-content table > thead > tr > td,
+.post-content table > tbody > tr > td,
+.post-content table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.5;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+.post-content table > thead > tr > th,
+.post-content table > thead > tr > td {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+}
+
+.post-content code {
+    color: #333;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+}
+
+.post-content pre {
+    border: none;
+    border-radius: 3px;
+}
+
+.post-content code,
+.post-content pre span {
+    font-family: Consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+}
+
+.post-content img {
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.post-content a {
+    border-bottom: 1px solid #555;
+}
+
+.post-content a:hover {
+    border-bottom-color: #000;
+}
+
+.post-content pre {
+    word-wrap: unset;
+}
+
+.comment {
+    padding: 0 30px 0;
+}
+
+.comment-list-title {
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.comment-list {
+    margin-top: 15px;
+}
+
+.comment-item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.comment-item .comment-name,
+.comment-item .comment-time {
+    color: #777;
+    font-size: 14px;
+}
+
+/**
+ * after 指示在添加此修饰符的元素（nickname）后部添加 content 中的内容（一个点）
+ * :after 是 CCS2 中的用法，::after 是 CCS3 中的用法
+ */
+.comment-item .comment-name:after {
+    content: ' ·';
+}
+
+.comment-item .comment-content {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.comment-form-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.comment-form {
+    margin-top: 15px;
+}
+
+.comment-form input {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 100%;
+    transition: 0.4s border-color linear;
+}
+
+.comment-form textarea {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 183px;
+    transition: 0.4s border-color linear;
+}
+
+.comment-form .comment-submit-button {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+/* about.html */
+
+.about {
+    padding: 30px 30px 0;
+}
+
+.about-title {
+    font-size: 1.6em;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    line-height: 1.8;
+}
+
+.avatar {
+    width: 100px;
+    float: right;
+}
+
+.avatar img {
+    width: 100px;
+}
+
+.reference {
+    margin: 40px 0;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    text-align: center;
+    font-size: 15px;
+}
+
+.about-section-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.about-horizontal-icon-bar {
+    padding-left: 1px;
+}
+
+.about-horizontal-icon-bar a {
+    margin-right: 5px;
+}
+
+.minecraft {
+    height: 18px;
+}
+
+.vultr {
+    background-color: #1669ba;
+    border-radius: 2px;
+    padding: 5px 3px;
+    height: 18px;
+}
+
+.django {
+    background-color: #0c3c26;
+    border-radius: 2px;
+    padding: 4px 3px;
+    height: 18px;
+}
+
+/* 403/404/500.html */
+
+.status {
+    padding: 30px 30px 0;
+}
+
+.status-title {
+    font-size: 1.6em;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.status-content {
+    line-height: 1.8;
+}
+
+/* Media Query */
+
+/* 当宽度小于 max-width 时 */
+@media (max-width: 431px) {
+
+    .post {
+        padding: 10px 10px 0;
+    }
+
+    .about {
+        padding: 0 10px 0;
+    }
+
+    .avatar {
+        width: 50px;
+        float: right;
+    }
+
+    .avatar img {
+        width: 50px;
+    }
+}
+
+/* 当屏幕宽度小于 max-width 时 */
+/*@media screen and (max-height: 30.5em) {}*/
+
+/* Modifications for Bootstrap */
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 后代选择器（仅一代），即 class = "row no-gutter" 的元素直接包含 class = "col-*" 的元素才起作用 */
+.row.no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/* Code Highlight */
+
+.codehilite .hll {
+    background-color: #ffffcc
+}
+
+/* Comment */
+.codehilite .c,
+/* Comment.Multiline */
+.codehilite .cm,
+/* Comment.Single */
+.codehilite .c1,
+/* Comment.Special */
+.codehilite .cs {
+    color: #8e908c;
+}
+
+/* Comment.Preproc */
+.codehilite .cp,
+.codehilite .cpf,
+/* Keyword */
+.codehilite .k,
+/* Keyword.Type */
+.codehilite .kt {
+    color: #8959a8;
+}
+
+/* Error */
+.codehilite .err {
+    color: #a61717;
+    background-color: #e3d2d2
+}
+
+.codehilite .n,
+/* Operator */
+.codehilite .o {
+    color: #4d4d4c;
+}
+
+/* Generic.Deleted */
+.codehilite .gd {
+    color: #000000;
+    background-color: #ffdddd
+}
+
+/* Generic.Emph */
+.codehilite .ge,
+/* Keyword.Constant */
+.codehilite .kc,
+/* Keyword.Declaration */
+.codehilite .kd,
+/* Keyword.Namespace */
+.codehilite .kn,
+/* Keyword.Pseudo */
+.codehilite .kp,
+/* Keyword.Reserved */
+.codehilite .kr,
+/* Operator.Word */
+.codehilite .ow {
+    color: #000000;
+}
+
+/* Name.Attribute */
+.codehilite .na,
+/* Name.Variable */
+.codehilite .nv,
+/* Name.Variable.Class */
+.codehilite .vc,
+/* Name.Variable.Global */
+.codehilite .vg,
+/* Name.Variable.Instance */
+.codehilite .vi {
+    color: #008080
+}
+
+/* Generic.Error */
+.codehilite .gr,
+/* Generic.Traceback */
+.codehilite .gt {
+    color: #aa0000
+}
+
+/* Generic.Heading */
+.codehilite .gh,
+/* Name.Builtin.Pseudo */
+.codehilite .bp {
+    color: #999999
+}
+
+/* Generic.Output */
+.codehilite .go {
+    color: #888888
+}
+
+/* Generic.Inserted */
+.codehilite .gi {
+    color: #000000;
+    background-color: #ddffdd
+}
+
+/* Generic.Prompt */
+.codehilite .gp,
+/* Name.Namespace */
+.codehilite .nn {
+    color: #555555
+}
+
+/* Generic.Strong */
+.codehilite .gs {
+    font-weight: bold
+}
+
+/* Generic.Subheading */
+.codehilite .gu {
+    color: #aaaaaa
+}
+
+/* Name.Class */
+.codehilite .nc {
+    color: #445588;
+}
+
+/* Name.Constant */
+.codehilite .no {
+    color: #008080
+}
+
+/* Name.Decorator */
+.codehilite .nd {
+    color: #3c5d5d;
+}
+
+/* Name.Entity */
+.codehilite .ni {
+    color: #800080
+}
+
+/* Name.Builtin */
+.codehilite .nb,
+/* Name.Exception */
+.codehilite .ne,
+/* Name.Function */
+.codehilite .nf,
+/* Name.Label */
+.codehilite .nl {
+    color: #f5871f;
+}
+
+/* Name.Tag */
+.codehilite .nt {
+    color: #000080
+}
+
+/* Text.Whitespace */
+.codehilite .w {
+    color: #bbbbbb
+}
+
+/* Literal.Number */
+.codehilite .m,
+/* Literal.Number.Float */
+.codehilite .mf,
+/* Literal.Number.Hex */
+.codehilite .mh,
+/* Literal.Number.Integer */
+.codehilite .mi,
+/* Literal.Number.Oct */
+.codehilite .mo,
+/* Literal.Number.Integer.Long */
+.codehilite .il,
+/* Literal.String */
+.codehilite .s,
+/* Literal.String.Single */
+.codehilite .s1,
+/* Literal.String.Backtick */
+.codehilite .sb,
+/* Literal.String.Char */
+.codehilite .sc,
+/* Literal.String.Doc */
+.codehilite .sd,
+/* Literal.String.Double */
+.codehilite .s2,
+/* Literal.String.Escape */
+.codehilite .se,
+/* Literal.String.Heredoc */
+.codehilite .sh,
+/* Literal.String.Interpol */
+.codehilite .si,
+/* Literal.String.Other */
+.codehilite .sx {
+    color: #3e999f
+}
+
+/* Literal.String.Regex */
+.codehilite .sr {
+    color: #009926
+}
+
+/* Literal.String.Symbol */
+.codehilite .ss {
+    color: #990073
+}
