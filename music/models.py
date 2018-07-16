@@ -16,23 +16,6 @@ class Music(models.Model):
 
     album = models.CharField('专辑', max_length=100)
 
-    ALBUM_TYPE_ALBUM = 'album'
-    ALBUM_TYPE_EP = 'ep'
-    ALBUM_TYPE_SINGLE = 'single'
-
-    ALBUM_TYPE_CHOICES = (
-        (ALBUM_TYPE_ALBUM, '专辑'),
-        (ALBUM_TYPE_EP, 'EP'),
-        (ALBUM_TYPE_SINGLE, '单曲'),
-    )
-
-    album_type = models.CharField(
-        '专辑类型',
-        max_length=10,
-        choices=ALBUM_TYPE_CHOICES,
-        default=ALBUM_TYPE_ALBUM
-    )
-
     year = models.PositiveSmallIntegerField(
         '年份',
         validators=[
@@ -48,7 +31,7 @@ class Music(models.Model):
 
     netease_cloud_music = models.CharField('网易云音乐', max_length=100, blank=True)
 
-    time = models.DateTimeField('时间', auto_now_add=True)
+    time = models.DateTimeField('时间', default=timezone.now)
 
     def __str__(self):
         return self.title
