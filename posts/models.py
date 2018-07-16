@@ -15,11 +15,13 @@ class Post(models.Model):
     # 正文，使用 TextField 来存储大段文本
     content = models.TextField('正文')
 
-    # 日期
+    # 日期 TODO 改成时间，方便同一天添加的文章排序
     date = models.DateField('日期', default=now)
 
     # 文件名
     file = models.CharField('文件', max_length=100)
+
+    # TODO 添加是否启用评论
 
     # 解释器显示的数据为此函数的返回值
     def __str__(self):

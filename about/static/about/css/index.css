@@ -1,0 +1,79 @@
+.about {
+    padding: 30px 30px 0;
+    font-size: 0.9rem;
+}
+
+.about-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    width: 100px;
+    float: right;
+}
+
+.avatar img {
+    width: 100px;
+}
+
+.reference {
+    margin: 40px 0;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: none;
+    text-align: center;
+    font-family: 'Source Han Serif', 'Noto Serif', serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.about h1 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.about-horizontal-icon-bar {
+    padding-left: 1px;
+}
+
+.about-horizontal-icon-bar a {
+    margin-right: 5px;
+}
+
+.minecraft {
+    height: 16px;
+}
+
+.vultr {
+    background-color: #1669ba;
+    border-radius: 2px;
+    padding: 5px 3px;
+    height: 18px;
+}
+
+.django {
+    background-color: #0c3c26;
+    border-radius: 2px;
+    padding: 4px 3px;
+    height: 18px;
+}
+
+@media (max-width: 431px) {
+
+    .about {
+        padding: 0 10px 0;
+    }
+
+    .avatar {
+        width: 50px;
+        float: right;
+    }
+
+    .avatar img {
+        width: 50px;
+    }
+}

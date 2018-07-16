@@ -1,0 +1,14 @@
+.status {
+    padding: 30px 30px 0;
+}
+
+.status-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.status-content {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}

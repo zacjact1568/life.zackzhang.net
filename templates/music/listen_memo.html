@@ -1,0 +1,80 @@
+{% extends 'common/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}听歌记录 | 全杰是也{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif">
+    <link rel="stylesheet" href="{% static 'music/css/listen_memo.css' %}">
+{% endblock %}
+
+{% block main %}
+    <header>
+        <div class="page-title">听歌记录</div>
+        <div class="update-time">
+            更新于 <time datetime="{{ update_time|date:"Y-m-d" }}">{{ update_time|date:"Y-m-d" }}</time>
+        </div>
+    </header>
+    <div class="music-list">
+    {% for music in music_list %}
+        <div class="music-list-item">
+            <div class="container">
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-md-3">
+                        <img src="{{ music.album_cover }}" class="album-cover">
+                    </div>
+                    <div class="col-md-7">
+                        <div class="title">{{ music.title }}</div>
+                        <div class="artist">{{ music.artist }}</div>
+                        <div class="album">{{ music.album }}</div>
+                        <div class="year">{{ music.year }}</div>
+                    </div>
+                    <div class="col-md-2 col-4 align-self-end">
+                        <div class="listen-link-bar">
+                        {% if music.show_genius %}
+                            <a href="{{ music.genius }}" class="genius">
+                                <img src="{% static 'music/img/genius-logo-lite.png' %}">
+                            </a>
+                        {% endif %}
+                        {% if music.show_netease_cloud_music %}
+                            <a href="{{ music.netease_cloud_music }}" class="netease-cloud-music">
+                                <img src="{% static 'music/img/netease-cloud-music-logo-lite.svg' %}">
+                            </a>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+        <div class="page-number">
+            {% if first %}
+                <a href="?page=1">1</a>
+            {% endif %}
+            {% if left %}
+                {% if left_has_more %}
+                    <span>...</span>
+                {% endif %}
+                {% for i in left %}
+                    <a href="?page={{ i }}">{{ i }}</a>
+                {% endfor %}
+            {% endif %}
+            <a href="?page={{ page_obj.number }}" class="current-page">{{ page_obj.number }}</a>
+            {% if right %}
+                {% for i in right %}
+                    <a href="?page={{ i }}">{{ i }}</a>
+                {% endfor %}
+                {% if right_has_more %}
+                    <span>...</span>
+                {% endif %}
+            {% endif %}
+            {% if last %}
+                <a href="?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
-    'comments'
+    'comments',
+    'about',
+    'status',
+    'music',
 ]
 
 MIDDLEWARE = [
@@ -119,6 +122,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# 在服务器端运行 collectstatic 将静态文件收集到的位置（根目录下的 static 文件夹）
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 在 HTML 模板中引用静态文件添加的前缀（i.e. {% static ... %}）
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# 除每个 app 中，静态文件的其他位置（用于放 app 共用的静态文件）
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'common', 'static')]

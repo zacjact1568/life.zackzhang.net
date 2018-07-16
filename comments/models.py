@@ -13,7 +13,7 @@ class Comment(models.Model):
     # 内容
     content = models.TextField('评论')
 
-    # auto_now_add：当评论保存到数据库时，自动把指定为当前时间
+    # auto_now_add：当评论保存到数据库时，自动指定为当前时间
     time = models.DateTimeField('时间', auto_now_add=True)
 
     # 评论属于哪篇文章

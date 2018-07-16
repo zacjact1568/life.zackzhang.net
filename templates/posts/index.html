@@ -1,26 +1,30 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
 
-{% block title %}全杰是也{% endblock title %}
+{% load staticfiles %}
+
+{% block title %}全杰是也{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'posts/css/index.css' %}">{% endblock %}
 
 {% block main %}
     {% for post in post_list %}
-        <article class="post">
+        <article class="post-list">
             <header>
-                <div class="post-title">
+                <div class="post-list-title">
                     <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                 </div>
-                <div class="post-time">
+                <div class="post-list-time">
                     <time datetime="{{ post.date|date:"Y-m-d" }}">{{ post.date|date:"Y-m-d" }}</time>
                 </div>
             </header>
-            <div class="post-excerpt">
+            <div class="post-list-excerpt">
                 <p>{{ post.excerpt|safe }}</p>
             </div>
         </article>
     {% endfor %}
 
     {% if is_paginated %}
-        <div class="pagination">
+        <div class="page-number">
             {% if first %}
                 <a href="?page=1">1</a>
             {% endif %}
@@ -32,7 +36,7 @@
                     <a href="?page={{ i }}">{{ i }}</a>
                 {% endfor %}
             {% endif %}
-            <span class="current-page"><a href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></span>
+            <a href="?page={{ page_obj.number }}" class="current-page">{{ page_obj.number }}</a>
             {% if right %}
                 {% for i in right %}
                     <a href="?page={{ i }}">{{ i }}</a>
@@ -46,4 +50,4 @@
             {% endif %}
         </div>
     {% endif %}
-{% endblock main %}
+{% endblock %}

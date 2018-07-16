@@ -1,0 +1,79 @@
+* {
+    font-family: 'Source Han Sans', 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    outline: none;
+}
+
+a {
+    color: #212529;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+::selection {
+  background: #262a30;
+  color: white;
+}
+
+.underline {
+    border-bottom: 1px solid #555;
+}
+
+.underline:hover {
+    border-bottom-color: black;
+}
+
+.header {
+    padding: 25px 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-menu-icon-bar {
+    float: right;
+}
+
+.header-menu-icon {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 20px;
+    float: left;
+}
+
+.content {
+    /* 对于任何浏览器，原始都有 1(r)em = 16px */
+    /* em 相对于父元素设置，rem 相对于 HTML 根元素设置 */
+    padding-bottom: 4rem;
+}
+
+.footer {
+    padding: 10px 0 1.5rem 0;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1em;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Bootstrap 4 已自带 no-gutters */
+
+/*.row.no-gutter {*/
+    /*margin-left: 0;*/
+    /*margin-right: 0;*/
+/*}*/
+
+/* 后代选择器（仅一代），即 class = "row no-gutter" 的元素直接包含 class = "col-*" 的元素才起作用 */
+/*.row.no-gutter > [class*='col-'] {*/
+    /*padding-right: 0;*/
+    /*padding-left: 0;*/
+/*}*/

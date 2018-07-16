@@ -1,0 +1,185 @@
+.page-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.update-time {
+    color: #999;
+    font-size: 13px;
+}
+
+.music-list {
+    margin-top: 40px;
+}
+
+.music-list-item {
+    margin-top: 16px;
+    padding: 28px 32px;
+    background-color: rgba(216, 216, 216, 0.3);
+}
+
+.music-list-item .container {
+    padding: 0;
+}
+
+.album-cover {
+    width: 140px;
+}
+
+.title,
+.artist,
+.album,
+.year {
+    font-family: 'Source Han Serif', 'Noto Serif', serif;
+}
+
+.title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.artist {
+    margin-top: 8px;
+}
+
+.artist,
+.album {
+    font-weight: 600;
+}
+
+.year {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.listen-link-bar {
+    text-align: end;
+}
+
+.listen-link-bar a {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+}
+
+.listen-link-bar a:hover {
+    filter: saturate(115%);
+}
+
+.genius {
+    margin: 0 4px;
+    background-color: #FFFF64;
+}
+
+.netease-cloud-music {
+    margin: 0 4px;
+    background-color: #C20C0C;
+}
+
+.listen-link-bar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+}
+
+.page-number {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.page-number * {
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.current-page {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+
+    .music-list-item {
+        margin-top: 10px;
+        padding: 20px 24px;
+    }
+
+    .album-cover {
+        width: 120px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .album-cover {
+        width: 110px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .artist,
+    .album {
+        font-size: 0.9rem;
+    }
+
+    .year {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .music-list-item {
+        padding-top: 24px;
+    }
+
+    .music-list-item,
+    .listen-link-bar {
+        text-align: center;
+    }
+
+    .album-cover {
+        width: 160px;
+    }
+
+    .title {
+        margin-top: 12px;
+        font-size: 1.3rem;
+    }
+
+    .artist,
+    .album {
+        font-size: 1rem;
+    }
+
+    .year {
+        font-size: 0.9rem;
+    }
+
+    .listen-link-bar {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 414px) {
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .artist,
+    .album {
+        font-size: 0.9rem;
+    }
+
+    .year {
+        font-size: 0.8rem;
+    }
+}

@@ -1,10 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'common/base.html' %}
+
 {% load staticfiles %}
 
 {% block title %}{% block code %}{% endblock code %} | 全杰是也{% endblock title %}
 
+{% block css %}<link rel="stylesheet" href="{% static 'status/css/style.css' %}">{% endblock %}
+
+{% block js %}<script src="{% static 'status/js/script.js' %}"></script>{% endblock %}
+
 {% block main %}
-    <script src="{% static 'posts/js/script.js' %}"></script>
     <article class="status">
         <div class="status-title">{% block description %}{% endblock description %}</div>
         <div class="status-content">

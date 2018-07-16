@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="{% static 'common/img/favicon.ico' %}" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans">
+    <link rel="stylesheet" href="{% static 'common/css/base.css' %}">
+    {% block css %}{% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    {% block js %}{% endblock %}
+</head>
+
+<body>
+<header class="header">
+    <div class="container">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-lg-6 col-md-8 col-sm-10 col-8">
+                <div class="header-title">
+                    <a href="{% url 'posts:index' %}">全杰是也</a>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-4">
+                <div class="header-menu-icon-bar">
+                    <div class="header-menu-icon">
+                        <a href="{% url 'music:index' %}"><span class="fas fa-music"></span></a>
+                    </div>
+                    <div class="header-menu-icon">
+                        <a href="{% url 'about:index' %}"><span class="fas fa-user"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <main class="col-lg-8 col-md-10">
+                {% block main %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-12">
+                <p class="copyright">&copy; 2017-2018 全杰是也</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

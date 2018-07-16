@@ -1,0 +1,37 @@
+.post-list {
+    /* 上：30，左右：30，下：0 */
+    padding: 30px 30px 0;
+}
+
+.post-list-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.post-list-time {
+    color: #999;
+    font-size: 13px;
+}
+
+.post-list-excerpt {
+    margin-top: 16px;
+    /* 若 line-height 为数字，真正的行间距 = line-height * 字体尺寸 */
+    line-height: 1.8;
+    font-size: 0.9rem;
+}
+
+/* pagination 被 Bootstrap 占了 */
+.page-number {
+    width: 100%;
+    text-align: center;
+}
+
+.page-number * {
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.current-page {
+    font-weight: bold;
+    font-size: 16px;
+}

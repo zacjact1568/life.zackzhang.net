@@ -15,16 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from posts.views import forbidden, page_not_found, internal_server_error
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('posts.urls')),
     path('', include('comments.urls')),
+    path('', include('about.urls')),
+    path('', include('music.urls')),
 ]
 
-handler403 = forbidden
+# 错误处理相关 view 只能定义在根 urls 中
 
-handler404 = page_not_found
+handler403 = 'status.views.forbidden'
 
-handler500 = internal_server_error
+handler404 = 'status.views.page_not_found'
+
+handler500 = 'status.views.internal_server_error'

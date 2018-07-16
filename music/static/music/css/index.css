@@ -1,0 +1,200 @@
+.song-of-this-year-box {
+    text-align: center;
+}
+
+/*
+ * 定义了该 class 的元素的子元素继承而来的 font-family 属性优先级比 * 低
+ * 所以，需要选择定义了该 class 的元素的直接后代
+ * 不能设置全部后代，否则 Font Awesome 的图标无法显示（字体不支持）
+ */
+.song-of-this-year-box > *,
+.lyric,
+.rest-link {
+    font-family: 'Source Han Serif', 'Noto Serif', serif;
+}
+
+.song-of-this-year {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.album-cover {
+    margin-top: 24px;
+    width: 160px;
+}
+
+.title-artist {
+    margin-top: 24px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.album {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.listen-link-bar {
+    margin-top: 28px;
+}
+
+.listen-link-bar a {
+    position: relative;
+    display: inline-block;
+    width: 88px;
+    height: 32px;
+    border-radius: 20px;
+}
+
+.listen-link-bar a:hover {
+    filter: saturate(115%);
+}
+
+.genius {
+    background-color: #FFFF64;
+}
+
+.apple-music {
+    background-color: #EB3256;
+}
+
+.spotify {
+    background-color: #1DB954;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.netease-cloud-music {
+    background-color: #C20C0C;
+}
+
+.qq-music {
+    background-color: #333333;
+}
+
+.listen-link-bar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+}
+
+.lyric-reference {
+    margin-top: 36px;
+}
+
+.lyric {
+    font-weight: 500;
+}
+
+.rest-link-bar {
+    margin-top: 36px;
+}
+
+.rest-link {
+    font-size: 12px;
+}
+
+.sub-website-link-bar {
+    margin-top: 40px;
+}
+
+.sub-website-link-bar a {
+    position: relative;
+    display: inline-block;
+    width: 180px;
+    height: 40px;
+    background-color: #039BE5;
+    border: 3px solid #0277BD;
+    border-radius: 20px;
+}
+
+.sub-website-link-bar a:hover {
+    background-color: #0288D1;
+}
+
+.sub-website-link-bar span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+@media (max-width: 992px) {
+
+    .listen-link-bar a {
+        width: 80px;
+    }
+
+    .listen-link-bar img {
+        width: 52px;
+    }
+
+    .sub-website-link-bar a {
+        width: 168px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .listen-link-bar a {
+        width: 72px;
+        height: 28px;
+    }
+
+    .listen-link-bar img {
+        width: 48px;
+    }
+
+    .sub-website-link-bar a {
+        width: 148px;
+    }
+
+    .sub-website-link-bar span {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .song-of-this-year {
+        font-size: 24px;
+    }
+
+    .album-cover {
+        width: 120px;
+    }
+
+    .title-artist {
+        font-size: 16px;
+    }
+
+    .album {
+        font-size: 12px;
+    }
+
+    .listen-link-bar a {
+        width: 120px;
+        height: 40px;
+    }
+
+    .listen-link-bar img {
+        width: 72px;
+    }
+
+    .lyric-reference {
+        font-size: 12px;
+    }
+
+    .rest-link {
+        font-size: 10px;
+    }
+}
