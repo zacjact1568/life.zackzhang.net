@@ -31,7 +31,7 @@ class Music(models.Model):
 
     netease_cloud_music = models.CharField('网易云音乐', max_length=100, blank=True)
 
-    time = models.DateTimeField('时间', default=timezone.now)
+    time = models.DateTimeField('时间', auto_now_add=True)
 
     def __str__(self):
         return self.title
