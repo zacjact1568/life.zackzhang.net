@@ -1,10 +1,10 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.utils import timezone
+from django.utils.timezone import localtime, now
 
 
 def current_year():
-    return int(timezone.localtime(timezone.now()).strftime('%Y'))
+    return int(localtime(now()).strftime('%Y'))
 
 
 # 音乐类
@@ -31,7 +31,7 @@ class Music(models.Model):
 
     netease_cloud_music = models.CharField('网易云音乐', max_length=100, blank=True)
 
-    time = models.DateTimeField('时间', auto_now_add=True)
+    time = models.DateTimeField('时间', default=now)
 
     def __str__(self):
         return self.title
