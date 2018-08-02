@@ -30,7 +30,7 @@
 .artist,
 .album,
 .year {
-    font-family: 'Source Han Serif', 'Noto Serif', serif;
+    font-family: 'Source Serif Pro', 'Source Sans Pro', 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
 
 .title {
