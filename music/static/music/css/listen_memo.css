@@ -26,13 +26,6 @@
     width: 140px;
 }
 
-.title,
-.artist,
-.album,
-.year {
-    font-family: 'Source Serif Pro', 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-}
-
 .title {
     font-size: 1.3rem;
     font-weight: bold;

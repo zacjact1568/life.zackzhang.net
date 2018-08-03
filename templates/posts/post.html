@@ -4,7 +4,10 @@
 
 {% block title %}{{ post.title }} | 全杰是也{% endblock %}
 
-{% block css %}<link rel="stylesheet" href="{% static 'posts/css/post.css' %}">{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="{% static 'posts/css/post.css' %}">
+{% endblock %}
 
 {% block main %}
     <article class="post">

@@ -100,7 +100,7 @@
 
 .post-content code,
 .post-content pre span {
-    font-family: Consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+    font-family: 'Roboto Mono', Menlo, Consolas, 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', monospace;
 }
 
 .post-content img {
