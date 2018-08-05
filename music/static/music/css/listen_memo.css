@@ -95,7 +95,7 @@
     font-size: 16px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
 
     .music-list-item {
         margin-top: 10px;
@@ -107,7 +107,7 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
 
     .album-cover {
         width: 110px;
@@ -127,7 +127,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .music-list-item {
         padding-top: 24px;
