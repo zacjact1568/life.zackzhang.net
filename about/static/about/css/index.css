@@ -25,7 +25,12 @@
     border-bottom: 1px solid #ccc;
     border-left: none;
     text-align: center;
-    font-family: 'Source Han Serif SC', 'Source Serif Pro', 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family:
+            /* 思源宋体 (安装) */
+            'Source Han Serif SC',
+            /* 来自 Google Fonts */
+            'Source Serif Pro',
+            serif;
     font-size: 15px;
     font-weight: 500;
 }

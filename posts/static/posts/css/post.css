@@ -100,7 +100,32 @@
 
 .post-content code,
 .post-content pre span {
-    font-family: 'Roboto Mono', Menlo, Consolas, 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', monospace;
+    font-family:
+            /* 西文 */
+
+            /* 来自 Google Fonts */
+            'Roboto Mono',
+            /* macOS 预装 */
+            'Menlo',
+            /* Windows 预装 */
+            'Consolas',
+
+            /* 中文 */
+
+            /* 苹方 (OSX >= 10.11 || iOS >= 9) */
+            'PingFang SC',
+            /* 冬青黑体 (OSX >= 10.6) */
+            'Hiragino Sans GB',
+            /* 华文黑体 (OSX < 10.6 || iOS < 9) */
+            'STHeiti',
+            /* 微软雅黑 (Windows >= Vista) */
+            'Microsoft YaHei',
+            /* 黑体 (Windows < Vista) */
+            'SimHei',
+            /* 文泉驿微米黑 (Linux) */
+            'WenQuanYi Micro Hei',
+
+            monospace;
 }
 
 .post-content img {

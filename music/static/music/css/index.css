@@ -10,7 +10,12 @@
 .song-of-this-year-box > *,
 .lyric,
 .rest-link {
-    font-family: 'Source Han Serif SC', 'Source Serif Pro', 'Noto Sans', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    font-family:
+            /* 思源宋体 (安装) */
+            'Source Han Serif SC',
+            /* 来自 Google Fonts */
+            'Source Serif Pro',
+            serif;
 }
 
 .song-of-this-year {
