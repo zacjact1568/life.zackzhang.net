@@ -64,8 +64,7 @@
     width: 20px;
 }
 
-.thanks-link-bar a {
-    display: block;
+.thanks-link-bar div {
     margin-bottom: 12px;
 }
 
