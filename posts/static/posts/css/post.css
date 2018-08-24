@@ -18,6 +18,15 @@
     line-height: 1.8;
 }
 
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin: 1.4rem 0 0.9rem 0;
+}
+
 .post-content h1 {
     font-size: 1.5rem;
 }
@@ -130,7 +139,7 @@
 
 .post-content img {
     max-width: 100%;
-    margin: 0 auto;
+    margin: 1.2rem auto;
     display: block;
 }
 
