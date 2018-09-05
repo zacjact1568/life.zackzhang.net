@@ -2,12 +2,10 @@
     text-align: center;
 }
 
-/*
- * 定义了该 class 的元素的子元素继承而来的 font-family 属性优先级比 * 低
- * 所以，需要选择定义了该 class 的元素的直接后代
- * 不能设置全部后代，否则 Font Awesome 的图标无法显示（字体不支持）
- */
-.song-of-this-year-box > *,
+/* 不能设置全部后代，否则 Font Awesome 的图标无法显示，字体不支持 */
+.song-of-this-year,
+.title-artist,
+.album,
 .lyric,
 .rest-link {
     font-family:
@@ -90,18 +88,27 @@
 
 .lyric-reference {
     margin-top: 36px;
+    color: #555;
 }
 
 .lyric {
     font-weight: 500;
 }
 
-.rest-link-bar {
+.rest-link {
     margin-top: 36px;
+    font-size: 12px;
 }
 
-.rest-link {
-    font-size: 12px;
+.rest-link a {
+    color: #555;
+    border-bottom: 1px solid #999;
+}
+
+.rest-link a:hover {
+    color: #222;
+    text-decoration: none;
+    border-bottom-color: #222;
 }
 
 .sub-website-link-bar {

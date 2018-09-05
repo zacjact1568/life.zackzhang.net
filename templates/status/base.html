@@ -4,17 +4,17 @@
 
 {% block title %}{% block code %}{% endblock code %} | 全杰是也{% endblock title %}
 
-{% block css %}<link rel="stylesheet" href="{% static 'status/css/style.css' %}">{% endblock %}
+{% block css %}<link rel="stylesheet" href="{% static 'status/css/base.css' %}">{% endblock %}
 
-{% block js %}<script src="{% static 'status/js/script.js' %}"></script>{% endblock %}
+{% block js %}<script src="{% static 'status/js/base.js' %}"></script>{% endblock %}
 
 {% block main %}
-    <article class="status">
-        <div class="status-title">{% block description %}{% endblock description %}</div>
-        <div class="status-content">
-            <div>全杰是也提醒您：</div>
-            <div>{% block explanation %}{% endblock explanation %}</div>
-            <div><span id="count">10</span> 秒后跳转到<a href="{% url 'posts:index' %}" class="underline" id="home">主页</a>。</div>
-        </div>
-    </article>
+<article class="status">
+    <div class="status-title">{% block description %}{% endblock description %}</div>
+    <div class="status-content">
+        <div>全杰是也提醒您：</div>
+        <div>{% block explanation %}{% endblock explanation %}</div>
+        <div><span id="count">10</span> 秒后跳转到<a href="{% url 'posts:index' %}" id="home">主页</a>。</div>
+    </div>
+</article>
 {% endblock main %}

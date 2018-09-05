@@ -1,0 +1,26 @@
+.status {
+    padding: 30px 30px 0;
+}
+
+.status-title {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.status-content {
+    margin-top: 16px;
+    color: #555;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.status-content a {
+    color: #555;
+    border-bottom: 1px solid #999;
+}
+
+.status-content a:hover {
+    color: #222;
+    text-decoration: none;
+    border-bottom-color: #222;
+}

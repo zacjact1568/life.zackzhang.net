@@ -1,4 +1,6 @@
-* {
+/* Common */
+
+body {
     font-family:
             /* 思源黑体 (安装) */
             'Source Han Sans SC',
@@ -41,32 +43,26 @@
     outline: none;
 }
 
-a {
-    color: #212529;
-}
-
-a:hover {
-    text-decoration: none;
-    color: black;
-}
-
 ::selection {
-  background: #262a30;
+  background: #262A30;
   color: white;
 }
 
-.underline {
-    border-bottom: 1px solid #555;
-}
-
-.underline:hover {
-    border-bottom-color: black;
-}
+/* base.html */
 
 .header {
     padding: 25px 20px;
     margin-bottom: 40px;
-    border-bottom: 1px solid #e7e7e7;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.header a {
+    color: #212529;
+}
+
+.header a:hover {
+    color: black;
+    text-decoration: none;
 }
 
 .header-title {
@@ -98,7 +94,7 @@ a:hover {
 .copyright {
     text-align: center;
     padding-top: 1em;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #EEE;
     font-size: 0.8rem;
     color: #666;
 }

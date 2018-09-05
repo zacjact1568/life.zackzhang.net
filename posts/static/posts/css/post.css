@@ -2,8 +2,12 @@
     padding: 30px 30px 0;
 }
 
+.post header {
+    text-align: center;
+}
+
 .post-title {
-    font-size: 1.6rem;
+    font-size: 26px;
     font-weight: 500;
 }
 
@@ -14,8 +18,9 @@
 
 .post-content {
     margin-top: 40px;
-    font-size: 0.9rem;
-    line-height: 1.8;
+    color: #555;
+    font-size: 14px;
+    line-height: 2;
 }
 
 .post-content h1,
@@ -24,7 +29,8 @@
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    margin: 1.4rem 0 0.9rem 0;
+    margin: 20px 0 10px;
+    font-weight: bold;
 }
 
 .post-content h1 {
@@ -52,7 +58,7 @@
 }
 
 .post-content p {
-    margin-bottom: 0.6rem;
+    margin-bottom: 25px;
     font-weight: 400;
     word-spacing: 1px;
     letter-spacing: 0.01em;
@@ -141,14 +147,19 @@
     max-width: 100%;
     margin: 1.2rem auto;
     display: block;
+    padding: 3px;
+    border: 1px solid #ddd;
 }
 
 .post-content a {
-    border-bottom: 1px solid #555;
+    color: #555;
+    border-bottom: 1px solid #999;
 }
 
 .post-content a:hover {
-    border-bottom-color: #000;
+    color: #222;
+    text-decoration: none;
+    border-bottom-color: #222;
 }
 
 /* Code Highlight */

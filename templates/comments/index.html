@@ -1,8 +1,8 @@
 {% load staticfiles %}
+{% if enable_comments %}
 <!-- TODO Any better way? -->
 <!-- https://stackoverflow.com/questions/45550036/django-include-template-with-css-js -->
-<link rel="stylesheet" href="{% static 'comments/css/comments.css' %}">
-{% if enable_comments %}
+<link rel="stylesheet" href="{% static 'comments/css/index.css' %}">
 <hr>
 <section class="comment">
     {% if comment_list.count > 0 %}

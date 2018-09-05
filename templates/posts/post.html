@@ -5,21 +5,21 @@
 {% block title %}{{ post.title }} | 全杰是也{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
-    <link rel="stylesheet" href="{% static 'posts/css/post.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+<link rel="stylesheet" href="{% static 'posts/css/post.css' %}">
 {% endblock %}
 
 {% block main %}
-    <article class="post">
-        <header>
-            <div class="post-title">{{ post.title }}</div>
-            <div class="post-time">
-                <time datetime="{{ post.date|date:"Y-m-d" }}">{{ post.date|date:"Y-m-d" }}</time>
-            </div>
-        </header>
-        <div class="post-content">
-            {{ post.content|safe }}
+<article class="post">
+    <header>
+        <div class="post-title">{{ post.title }}</div>
+        <div class="post-time">
+            <time datetime="{{ post.date|date:"Y-m-d" }}">{{ post.date|date:"Y-m-d" }}</time>
         </div>
-    </article>
-    {% include 'comments/comments.html' %}
+    </header>
+    <div class="post-content">
+        {{ post.content|safe }}
+    </div>
+</article>
+{% include 'comments/index.html' %}
 {% endblock %}

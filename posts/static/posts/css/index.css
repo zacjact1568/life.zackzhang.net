@@ -1,11 +1,23 @@
 .post-list {
+    color: #555;
+}
+
+.post-list-item {
     /* 上：30，左右：30，下：0 */
     padding: 30px 30px 0;
 }
 
 .post-list-title {
-    font-size: 1.4rem;
+    font-size: 24px;
     font-weight: 500;
+}
+
+.post-list-title a {
+    color: #212529;
+}
+
+.post-list-title a:hover {
+    color: black;
 }
 
 .post-list-time {
@@ -16,8 +28,19 @@
 .post-list-excerpt {
     margin-top: 16px;
     /* 若 line-height 为数字，真正的行间距 = line-height * 字体尺寸 */
-    line-height: 1.8;
-    font-size: 0.9rem;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.post-list-excerpt a {
+    color: #555;
+    border-bottom: 1px solid #999;
+}
+
+.post-list-excerpt a:hover {
+    color: #222;
+    text-decoration: none;
+    border-bottom-color: #222;
 }
 
 /* pagination 被 Bootstrap 占了 */
@@ -29,6 +52,14 @@
 .page-number * {
     margin: 0 5px;
     font-size: 14px;
+}
+
+.page-number a {
+    color: #555;
+}
+
+.page-number a:hover {
+    color: #222;
 }
 
 .current-page {
