@@ -90,6 +90,14 @@
     font-size: 14px;
 }
 
+.page-number a {
+    color: #555;
+}
+
+.page-number a:hover {
+    color: #222;
+}
+
 .current-page {
     font-weight: bold;
     font-size: 16px;
