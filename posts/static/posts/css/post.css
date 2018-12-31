@@ -65,7 +65,15 @@
 }
 
 .post-content blockquote {
-  font-size: 14px;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-left: 4px solid #ccc;
+    background-color: #F1F1F1;
+    margin-bottom: 25px;
+}
+
+.post-content blockquote p {
+    margin-bottom: 0;
 }
 
 .post-content table {
