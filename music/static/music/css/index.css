@@ -1,84 +1,52 @@
-.song-of-this-year-box {
+.content-box {
     text-align: center;
 }
 
-/* 不能设置全部后代，否则 Font Awesome 的图标无法显示，字体不支持 */
-.song-of-this-year,
-.title-artist,
-.album,
-.lyric,
-.rest-link {
-    font-family:
-            /* 思源宋体 (安装) */
-            'Source Han Serif SC',
-            /* 来自 Google Fonts */
-            'Source Serif Pro',
-            serif;
+.annual-music-title {
+    height: 32px;
 }
 
-.song-of-this-year {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.album-cover {
+.annual-music-item-box {
+    text-align: center;
     margin-top: 24px;
+    border-radius: 12px;
+    padding: 28px 32px;
+    background-color: rgba(216, 216, 216, 0.3);
+}
+
+.annual-music-name-artist {
+    margin: 0 auto;
+    height: 52px;
+    display: block;
+}
+
+.annual-music-album-cover {
+    margin: 24px auto 0 auto;
     width: 160px;
+    display: block;
 }
 
-.title-artist {
+.annual-music-lyric {
+    margin: 24px auto 0 auto;
+    height: 52px;
+    display: block;
+}
+
+.annual-music-link {
     margin-top: 24px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.album {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.listen-link-bar {
-    margin-top: 28px;
-}
-
-.listen-link-bar a {
     position: relative;
     display: inline-block;
     width: 88px;
-    height: 32px;
+    height: 30px;
     border-radius: 20px;
-}
-
-.listen-link-bar a:hover {
-    filter: saturate(115%);
-}
-
-.genius {
-    background-color: #FFFF64;
-}
-
-.apple-music {
-    background-color: #EB3256;
-}
-
-.spotify {
-    background-color: #1DB954;
-}
-
-.youtube {
-    background-color: #FF0000;
-}
-
-.netease-cloud-music {
     background-color: #C20C0C;
 }
 
-.qq-music {
-    background-color: #333333;
+.annual-music-link:hover {
+    filter: saturate(115%);
 }
 
-.listen-link-bar img {
+.annual-music-link img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -86,26 +54,17 @@
     width: 56px;
 }
 
-.lyric-reference {
-    margin-top: 36px;
-    color: #555;
-}
-
-.lyric {
-    font-weight: 500;
-}
-
-.rest-link {
+.annual-music-rest-link {
     margin-top: 36px;
     font-size: 12px;
 }
 
-.rest-link a {
+.annual-music-rest-link a {
     color: #555;
     border-bottom: 1px solid #999;
 }
 
-.rest-link a:hover {
+.annual-music-rest-link a:hover {
     color: #222;
     text-decoration: none;
     border-bottom-color: #222;
@@ -120,12 +79,12 @@
     display: inline-block;
     width: 180px;
     height: 40px;
-    background-color: #039BE5;
+    background-color: #4A90E2;
     border-radius: 20px;
 }
 
 .sub-website-link-bar a:hover {
-    background-color: #0288D1;
+    background-color: #2268BA;
 }
 
 .sub-website-link-bar span {
@@ -141,29 +100,12 @@
 
 @media (max-width: 992px) {
 
-    .listen-link-bar a {
-        width: 80px;
-    }
-
-    .listen-link-bar img {
-        width: 52px;
-    }
-
     .sub-website-link-bar a {
         width: 168px;
     }
 }
 
 @media (max-width: 768px) {
-
-    .listen-link-bar a {
-        width: 72px;
-        height: 28px;
-    }
-
-    .listen-link-bar img {
-        width: 48px;
-    }
 
     .sub-website-link-bar a {
         width: 148px;
@@ -176,36 +118,11 @@
 
 @media (max-width: 576px) {
 
-    .song-of-this-year {
-        font-size: 24px;
+    .annual-music-item-box {
+        margin-bottom: 24px;
     }
 
-    .album-cover {
-        width: 120px;
-    }
-
-    .title-artist {
-        font-size: 16px;
-    }
-
-    .album {
-        font-size: 12px;
-    }
-
-    .listen-link-bar a {
-        width: 120px;
-        height: 40px;
-    }
-
-    .listen-link-bar img {
-        width: 72px;
-    }
-
-    .lyric-reference {
-        font-size: 12px;
-    }
-
-    .rest-link {
-        font-size: 10px;
+    .annual-music-rest-link {
+        margin-top: 12px;
     }
 }
