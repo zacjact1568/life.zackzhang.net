@@ -9,39 +9,31 @@
 {% endblock %}
 
 {% block main %}
-    <header>
+    <div class="page-header">
         <div class="page-title">听歌记录</div>
         <div class="update-time">
             更新于 <time datetime="{{ update_time|date:"Y-m-d" }}">{{ update_time|date:"Y-m-d" }}</time>
         </div>
-    </header>
+    </div>
     <div class="music-list">
     {% for music in music_list %}
         <div class="music-list-item">
             <div class="container">
                 <div class="row justify-content-center no-gutters">
-                    <div class="col-md-3">
-                        <img src="{{ music.album_cover }}" class="album-cover">
+                    <div class="col-sm-2">
+                        <img src="{{ music.cover }}" class="music-cover">
                     </div>
-                    <div class="col-md-7">
-                        <div class="title">{{ music.title }}</div>
-                        <div class="artist">{{ music.artist }}</div>
-                        <div class="album">{{ music.album }}</div>
-                        <div class="year">{{ music.year }}</div>
+                    <div class="col-sm-9">
+                        <div class="music-title">{{ music.title }}</div>
+                        <div class="music-artist">{{ music.artist }}</div>
+                        <div class="music-album-year">{{ music.album_year }}</div>
                     </div>
-                    <div class="col-md-2 col-4 align-self-end">
-                        <div class="listen-link-bar">
-                        {% if music.show_genius %}
-                            <a href="{{ music.genius }}" class="genius">
-                                <img src="{% static 'music/img/genius-logo-lite.png' %}">
-                            </a>
-                        {% endif %}
-                        {% if music.show_netease_cloud_music %}
-                            <a href="{{ music.netease_cloud_music }}" class="netease-cloud-music">
-                                <img src="{% static 'music/img/netease-cloud-music-logo-lite.svg' %}">
-                            </a>
-                        {% endif %}
-                        </div>
+                    <div class="col-sm-1 align-self-center">
+                    {% if music.show_link %}
+                        <a href="{{ music.link }}" class="music-link">
+                            <img src="{% static 'music/img/netease-cloud-music-logo-lite.svg' %}">
+                        </a>
+                    {% endif %}
                     </div>
                 </div>
             </div>

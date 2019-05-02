@@ -3,10 +3,6 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils.timezone import localtime, now
 
 
-def current_year():
-    return int(localtime(now()).strftime('%Y'))
-
-
 # 音乐类
 class Music(models.Model):
 
@@ -20,16 +16,13 @@ class Music(models.Model):
         '年份',
         validators=[
             MinValueValidator(1970),
-            # 当前年份 + 1，可能有预购专辑下一年才发行
-            MaxValueValidator(current_year() + 1)
+            MaxValueValidator(2038)
         ]
     )
 
-    album_cover = models.CharField('专辑封面', max_length=100)
+    cover = models.CharField('封面', max_length=100)
 
-    genius = models.CharField('Genius', max_length=100, blank=True)
-
-    netease_cloud_music = models.CharField('网易云音乐', max_length=100, blank=True)
+    link = models.CharField('链接', max_length=100, blank=True)
 
     time = models.DateTimeField('时间', default=now)
 

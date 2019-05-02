@@ -23,15 +23,15 @@ class ListenMemoView(ListView):
     def get_queryset(self):
         music_list = super(ListenMemoView, self).get_queryset()
         for music in music_list:
-            music.album_cover = 'https://upload-images.jianshu.io/upload_images/1771371-%s.jpg' % music.album_cover
-            music.show_genius = False
-            if music.genius != '':
-                music.show_genius = True
-                music.genius = 'https://genius.com/%s-lyrics' % music.genius
-            music.show_netease_cloud_music = False
-            if music.netease_cloud_music != '':
-                music.show_netease_cloud_music = True
-                music.netease_cloud_music = 'http://music.163.com/%s/' % music.netease_cloud_music
+            # 补全专辑封面链接 TODO 更新为我自己的图床
+            music.cover = 'https://upload-images.jianshu.io/upload_images/1771371-%s.jpg' % music.cover
+            # 拼接专辑和年份
+            music.album_year = '%s · %d' % (music.album, music.year)
+            # 如果有听歌链接，补全网易云音乐链接
+            music.show_link = False
+            if music.link != '':
+                music.show_link = True
+                music.link = 'http://music.163.com/%s/' % music.link
         return music_list
 
     def get_context_data(self, **kwargs):

@@ -1,5 +1,9 @@
+.page-header {
+    text-align: center;
+}
+
 .page-title {
-    font-size: 1.6rem;
+    font-size: 26px;
     font-weight: 500;
 }
 
@@ -10,11 +14,25 @@
 
 .music-list {
     margin-top: 40px;
+    font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            'Noto Sans',
+            'Helvetica Neue',
+            'Arial',
+            'PingFang SC',
+            'Hiragino Sans GB',
+            'STHeiti',
+            'Microsoft YaHei',
+            'SimHei',
+            'WenQuanYi Micro Hei',
+            sans-serif;
 }
 
 .music-list-item {
     margin-top: 16px;
-    padding: 28px 32px;
+    border-radius: 12px;
+    padding: 18px 20px;
     background-color: rgba(216, 216, 216, 0.3);
 }
 
@@ -22,56 +40,48 @@
     padding: 0;
 }
 
-.album-cover {
-    width: 140px;
+.music-cover {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 80px;
+    border-radius: 6px;
 }
 
-.title {
-    font-size: 1.3rem;
+.music-title {
+    font-size: 18px;
     font-weight: bold;
 }
 
-.artist {
-    margin-top: 8px;
+.music-artist {
+    margin-top: 4px;
+    font-size: 16px;
 }
 
-.artist,
-.album {
-    font-weight: 600;
+.music-album-year {
+    font-size: 14px;
 }
 
-.year {
-    font-size: 0.9rem;
-    font-weight: 500;
+.music-artist,
+.music-album-year {
+    color: #4A4A4A;
 }
 
-.listen-link-bar {
-    text-align: end;
-}
-
-.listen-link-bar a {
+.music-link {
+    margin: 0 4px;
     position: relative;
     display: inline-block;
     width: 32px;
     height: 32px;
     border-radius: 16px;
+    background-color: #9B9B9B;
 }
 
-.listen-link-bar a:hover {
-    filter: saturate(115%);
-}
-
-.genius {
-    margin: 0 4px;
-    background-color: #FFFF64;
-}
-
-.netease-cloud-music {
-    margin: 0 4px;
+.music-link:hover {
     background-color: #C20C0C;
 }
 
-.listen-link-bar img {
+.music-link img {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -105,82 +115,68 @@
 
 @media (max-width: 1199px) {
 
-    .music-list-item {
-        margin-top: 10px;
-        padding: 20px 24px;
-    }
-
-    .album-cover {
-        width: 120px;
+    .music-cover {
+        margin-left: 0;
     }
 }
 
 @media (max-width: 991px) {
 
-    .album-cover {
-        width: 110px;
+    .music-cover {
+        width: 74px;
     }
 
-    .title {
-        font-size: 1.2rem;
-    }
-
-    .artist,
-    .album {
-        font-size: 0.9rem;
-    }
-
-    .year {
-        font-size: 0.8rem;
+    .music-artist {
+        margin-top: 1px;
     }
 }
 
 @media (max-width: 767px) {
 
-    .music-list-item {
-        padding-top: 24px;
+    .music-cover {
+        width: 66px;
     }
 
-    .music-list-item,
-    .listen-link-bar {
-        text-align: center;
+    .music-title {
+        font-size: 16px;
     }
 
-    .album-cover {
-        width: 160px;
+    .music-artist {
+        margin-top: 2px;
+        font-size: 14px;
     }
 
-    .title {
-        margin-top: 12px;
-        font-size: 1.3rem;
-    }
-
-    .artist,
-    .album {
-        font-size: 1rem;
-    }
-
-    .year {
-        font-size: 0.9rem;
-    }
-
-    .listen-link-bar {
-        margin-top: 12px;
+    .music-album-year {
+        font-size: 12px;
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 575px) {
 
-    .title {
-        font-size: 1.2rem;
+    .music-list-item {
+        text-align: center;
     }
 
-    .artist,
-    .album {
-        font-size: 0.9rem;
+    .music-cover {
+        margin-left: auto;
+        width: 120px;
     }
 
-    .year {
-        font-size: 0.8rem;
+    .music-title {
+        margin-top: 12px;
+        font-size: 18px;
+    }
+
+    .music-artist {
+        margin-top: 4px;
+        font-size: 16px;
+    }
+
+    .music-album-year {
+        font-size: 14px;
+    }
+
+    .music-link {
+        margin-top: 12px;
     }
 }
