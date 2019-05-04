@@ -23,8 +23,8 @@ class ListenMemoView(ListView):
     def get_queryset(self):
         music_list = super(ListenMemoView, self).get_queryset()
         for music in music_list:
-            # 补全专辑封面链接 TODO 更新为我自己的图床
-            music.cover = 'https://upload-images.jianshu.io/upload_images/1771371-%s.jpg' % music.cover
+            # 补全专辑封面链接
+            music.cover = 'https://image.zacjact1568.com/music/%s.jpg' % music.cover
             # 拼接专辑和年份
             music.album_year = '%s · %d' % (music.album, music.year)
             # 如果有听歌链接，补全网易云音乐链接
