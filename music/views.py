@@ -56,6 +56,6 @@ class ListenMemoView(ListView):
 # 点进列表项还是 Post Detail 页面
 class AnnualSummaryView(IndexView):
 
-    # 将 file 字段开头为 music-listen-annual-summary- 的 Post 选出，这就是年度总结
+    # 将 file 字段开头为 annual-summary-on-music-listening- 的 Post 选出，这就是年度总结
     # i.e. 所有年度总结 Post 的 file 字段必须使用这样的格式
-    queryset = Post.objects.filter(file__startswith='music-listen-annual-summary-')
+    queryset = Post.objects.filter(file__startswith='annual-summary-on-music-listening-')
