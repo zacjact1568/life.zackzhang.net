@@ -1,13 +1,13 @@
 from django.shortcuts import render
 
 
-def forbidden(request):
+def permission_denied(request, exception):
     return render(request, 'status/403.html')
 
 
-def page_not_found(request):
+def page_not_found(request, exception):
     return render(request, 'status/404.html')
 
 
-def internal_server_error(request):
+def server_error(request):
     return render(request, 'status/500.html')

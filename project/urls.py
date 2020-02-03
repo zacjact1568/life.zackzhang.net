@@ -25,9 +25,6 @@ urlpatterns = [
 ]
 
 # 错误处理相关 view 只能定义在根 urls 中
-
-handler403 = 'status.views.forbidden'
-
+handler403 = 'status.views.permission_denied'
 handler404 = 'status.views.page_not_found'
-
-handler500 = 'status.views.internal_server_error'
+handler500 = 'status.views.server_error'
