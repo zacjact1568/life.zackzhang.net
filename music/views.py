@@ -1,13 +1,23 @@
-from django.shortcuts import render
 from django.views.generic import ListView
 from .models import Music
 from utils import pagination
-from posts.views import IndexView
+from posts.views import IndexView as PostsIndexView
 from posts.models import Post
 
 
-def index(request):
-    return render(request, 'music/index.html')
+class IndexView(ListView):
+
+    model = Music
+    queryset = model.objects.filter(time__year=2019, essential__gt=-1)
+    ordering = "essential"
+    template_name = "music/index.html"
+
+    def get_queryset(self):
+        music_list = super().get_queryset()
+        for music in music_list:
+            music.cover = f"https://image.zacjact1568.com/music/{music.cover}.jpg"
+            music.track = self.model.ESSENTIAL_CHOICES[music.essential + 1][1]
+        return music_list
 
 
 class ListenMemoView(ListView):
@@ -54,7 +64,7 @@ class ListenMemoView(ListView):
 
 # 年度总结实际上是写在 Post 中的，这里只是将所有 Post 中的年度总结过滤出来做的一个列表
 # 点进列表项还是 Post Detail 页面
-class AnnualSummaryView(IndexView):
+class AnnualSummaryView(PostsIndexView):
 
     # 将 file 字段开头为 annual-summary-on-music-listening- 的 Post 选出，这就是年度总结
     # i.e. 所有年度总结 Post 的 file 字段必须使用这样的格式

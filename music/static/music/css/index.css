@@ -1,70 +1,185 @@
-.content-box {
-    text-align: center;
+/* am = annual music */
+
+.am-title .year {
+    margin-right: 6px;
+    vertical-align: -50%;
+    font-family: "Biryani", sans-serif;
+    font-size: 44px;
 }
 
-.annual-music-title {
-    height: 32px;
+.am-title .year-song-of-this-year {
+    color: #F86A4B;
 }
 
-.annual-music-item-box {
-    text-align: center;
-    margin-top: 24px;
+.am-title .zh {
+    font-family: "Noto Serif SC", serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.am-title .en,
+.am-content-secondary-link .explanation {
+    font-family: "Lora", serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.am-content,
+.am-content-secondary-link {
     border-radius: 12px;
-    padding: 28px 32px;
     background-color: rgba(216, 216, 216, 0.3);
 }
 
-.annual-music-name-artist {
-    margin: 0 auto;
-    height: 52px;
-    display: block;
+.am-content .title {
+    font-family: "Roboto Slab", "FZCuHeiSong-B-JF", serif;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.annual-music-album-cover {
-    margin: 24px auto 0 auto;
+.am-content .artist {
+    font-family: "Lora", "Noto Serif SC", serif;
+    font-weight: 700;
+    color: #4A4A4A;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.am-content-primary {
+    padding: 32px;
+}
+
+.am-content-primary .cover {
+    margin-right: 24px;
     width: 160px;
-    display: block;
+    border-radius: 8px;
 }
 
-.annual-music-lyric {
-    margin: 24px auto 0 auto;
-    height: 52px;
-    display: block;
+.am-content-primary .title {
+    font-size: 32px;
 }
 
-.annual-music-link {
-    margin-top: 24px;
+.am-content-primary .artist {
+    font-size: 18px;
+}
+
+.am-content-primary .lyric {
+    margin-top: 12px;
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #4A4A4A;
+}
+
+.am-content-primary .lyric::before {
+    content: "“";
+}
+
+.am-content-primary .lyric::after {
+    content: "”";
+}
+
+.am-link {
     position: relative;
     display: inline-block;
-    width: 88px;
-    height: 30px;
-    border-radius: 20px;
-    background-color: #C20C0C;
+    width: 72px;
+    height: 26px;
+    border-radius: 13px;
 }
 
-.annual-music-link:hover {
+.am-content-primary .am-link {
+    margin-top: 16px;
+    margin-right: 8px;
+}
+
+.am-link-apple-music {
+    background-color: #EB3256;
+}
+
+.am-link-spotify {
+    background-color: #1DB954;
+}
+
+.am-link-youtube {
+    background-color: #FF0000;
+}
+
+.am-link:hover {
     filter: saturate(115%);
 }
 
-.annual-music-link img {
+.am-link > img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 56px;
+    width: 40px;
 }
 
-.annual-music-rest-link {
-    margin-top: 36px;
+.am-title .year-essentials,
+.am-content-secondary .track {
+    color: #7A3433;
+}
+
+.am-content-secondary-grid {
+    padding: 0;
+}
+
+.am-content-secondary-grid .grid-row {
+    margin: -8px;
+}
+
+.am-content-secondary-grid .grid-column {
+    padding: 8px;
+}
+
+.am-content-secondary {
+    padding: 16px;
+}
+
+.am-content-secondary .cover {
+    margin-right: 12px;
+    width: 80px;
+    border-radius: 6px;
+}
+
+.am-content-secondary .track {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.am-content-secondary .title {
+    font-size: 20px;
+}
+
+.am-content-secondary .artist {
+    font-size: 14px;
+}
+
+.am-content-secondary-link {
+    margin-top: 16px;
+    padding: 14px;
+    text-align: center;
+}
+
+.am-content-secondary-link .am-link {
+    margin: 10px 4px;
+}
+
+.am-content-secondary-link .summary-link {
     font-size: 12px;
 }
 
-.annual-music-rest-link a {
+.am-content-secondary-link .summary-link > a {
     color: #555;
     border-bottom: 1px solid #999;
 }
 
-.annual-music-rest-link a:hover {
+.am-content-secondary-link .summary-link > a:hover {
     color: #222;
     text-decoration: none;
     border-bottom-color: #222;
@@ -72,6 +187,7 @@
 
 .sub-website-link-bar {
     margin-top: 40px;
+    text-align: center;
 }
 
 .sub-website-link-bar a {
@@ -98,14 +214,119 @@
     color: white;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1199px) {
+
+    .am-content-secondary .cover {
+        width: 66px;
+    }
+
+    .am-content-secondary .title {
+        font-size: 16px;
+    }
+
+    .am-content-secondary .artist {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .am-content-primary .cover {
+        width: 148px;
+    }
+
+    .am-content-primary .title {
+        font-size: 26px;
+    }
+
+    .am-content-primary .artist {
+        font-size: 16px;
+    }
+
+    .am-content-primary .lyric {
+        margin-top: 8px;
+        font-size: 13px;
+    }
+
+    .am-content-primary .am-link {
+        margin-top: 14px;
+    }
+
+    .am-content-secondary .cover {
+        width: 60px;
+    }
+
+    .am-content-secondary .track {
+        font-size: 13px;
+    }
+
+    .am-content-secondary .title {
+        font-size: 14px;
+    }
 
     .sub-website-link-bar a {
         width: 168px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+
+    .am-content-primary {
+        padding: 26px;
+    }
+
+    .am-content-primary .cover {
+        margin-right: 20px;
+        width: 128px;
+    }
+
+    .am-content-primary .title {
+        font-size: 25px;
+    }
+
+    .am-content-primary .artist {
+        font-size: 15px;
+    }
+
+    .am-content-primary .lyric {
+        font-size: 12px;
+    }
+
+    .am-link {
+        width: 62px;
+        height: 22px;
+        border-radius: 11px;
+    }
+
+    .am-content-primary .am-link {
+        margin-top: 12px;
+        margin-right: 6px;
+    }
+
+    .am-link > img {
+        width: 36px;
+    }
+
+    .am-content-secondary {
+        padding: 18px;
+    }
+
+    .am-content-secondary .cover {
+        margin-right: 14px;
+        width: 78px;
+    }
+
+    .am-content-secondary .track {
+        font-size: 16px;
+    }
+
+    .am-content-secondary .title {
+        font-size: 18px;
+    }
+
+    .am-content-secondary .artist {
+        font-size: 14px;
+    }
 
     .sub-website-link-bar a {
         width: 148px;
@@ -116,13 +337,122 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
 
-    .annual-music-item-box {
-        margin-bottom: 24px;
+    .am-content-primary,
+    .am-content-secondary {
+        padding: 32px;
     }
 
-    .annual-music-rest-link {
+    .am-content-primary,
+    .am-content-secondary-grid {
+        text-align: center;
+    }
+
+    .am-content-primary .cover,
+    .am-content-secondary .cover {
+        margin-right: 0;
+    }
+
+    .am-content-primary .cover {
+        width: 200px;
+    }
+
+    .am-content-primary .title {
         margin-top: 12px;
+        font-size: 32px;
+    }
+
+    .am-content-primary .artist {
+        font-size: 18px;
+    }
+
+    .am-content-primary .lyric {
+        font-size: 14px;
+    }
+
+    .am-link {
+        width: 72px;
+        height: 26px;
+        border-radius: 13px;
+    }
+
+    .am-content-primary .am-link {
+        margin: 24px 4px 0;
+    }
+
+    .am-link > img {
+        width: 40px;
+    }
+
+    .am-content-secondary .cover {
+        width: 160px;
+    }
+
+    .am-content-secondary .track {
+        margin-top: 8px;
+    }
+
+    .am-content-secondary .title {
+        font-size: 24px;
+    }
+
+    .am-content-secondary .artist {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .am-content-primary,
+    .am-content-secondary {
+        padding: 24px;
+    }
+
+    .am-content-primary .cover {
+        width: 160px;
+    }
+
+    .am-content-primary .title {
+        margin-top: 10px;
+        font-size: 24px;
+    }
+
+    .am-content-primary .artist {
+        font-size: 16px;
+    }
+
+    .am-content-primary .lyric {
+        font-size: 12px;
+    }
+
+    .am-link {
+        width: 62px;
+        height: 22px;
+        border-radius: 11px;
+    }
+
+    .am-content-primary .am-link {
+        margin: 20px 2px 0;
+    }
+
+    .am-link > img {
+        width: 36px;
+    }
+
+    .am-content-secondary .cover {
+        width: 120px;
+    }
+
+    .am-content-secondary .track {
+        margin-top: 6px;
+    }
+
+    .am-content-secondary .title {
+        font-size: 18px;
+    }
+
+    .am-content-secondary .artist {
+        font-size: 14px;
     }
 }

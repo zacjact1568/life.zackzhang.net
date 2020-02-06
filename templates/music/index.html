@@ -5,55 +5,113 @@
 {% block title %}音乐 | 全杰是也{% endblock %}
 
 {% block css %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Biryani&display=swap&text=2019">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:900&display=swap&text=%e5%b9%b4%e5%ba%a6%e6%ad%8c%e6%9b%b2%e7%b2%be%e9%80%89%e9%9b%86">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400i,700|Roboto+Slab:700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap&text=INTROACK%201234567890U">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:700&display=swap&text=e8%8e%ab%e5%ae%b0%e7%be%8a">
+<style type="text/css">
+@font-face {
+    font-family: "FZCuHeiSong-B-JF";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local("FZCuHeiSong-B-JF"),
+         url("{% static 'music/font/FZCHSJF.woff2' %}") format("woff2"),
+         url("{% static 'music/font/FZCHSJF.woff' %}") format("woff");
+}
+</style>
 <link rel="stylesheet" href="{% static 'music/css/index.css' %}">
 {% endblock %}
 
 {% block main %}
-<div class="content-box">
-    <div class="annual-music-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <img src="{% static 'music/img/soy-title.svg' %}" class="annual-music-title">
-                    <div class="annual-music-item-box">
-                        <img src="{% static 'music/img/soy-name-artist.svg' %}" class="annual-music-name-artist">
-                        <img src="https://image.zacjact1568.com/music/majik-x-single.jpg" alt="X - Single" class="annual-music-album-cover">
-                        <img src="{% static 'music/img/soy-lyric.svg' %}" class="annual-music-lyric">
-                        <a href="http://music.163.com/song/574339360/" class="annual-music-link">
-                            <img src="{% static 'music/img/netease-cloud-music-logo.svg' %}">
-                        </a>
+<div class="container am-title">
+    <div class="row align-items-center justify-content-sm-start justify-content-center no-gutters">
+        <div class="col-auto">
+            <span class="year year-song-of-this-year">2019</span>
+        </div>
+        <div class="col-auto">
+            <div class="zh">年度歌曲</div>
+            <div class="en">Song Of This Year</div>
+        </div>
+    </div>
+</div>
+<div class="container am-content am-content-primary">
+    <div class="row align-items-center no-gutters">
+        <div class="col-sm-auto">
+            <img src="https://image.zacjact1568.com/music/half-alive-now-not-yet.jpg" alt="Now, Not Yet" class="cover">
+        </div>
+        <div class="col-sm-auto">
+            <div class="title">still feel.</div>
+            <div class="artist">half•alive</div>
+            <div class="lyric">I still feel alive, when it is hopeless, I start to notice</div>
+            <a href="https://music.apple.com/us/album/still-feel/1467958791?i=1467959289" class="am-link am-link-apple-music">
+                <img src="{% static 'music/img/apple-music-logo.svg' %}" alt="Apple Music">
+            </a>
+            <a href="https://open.spotify.com/track/48XkVAagIoQHCsOlJtXUd5?si=mXbOWlOqS42Y1CAevlZQJg" class="am-link am-link-spotify">
+                <img src="{% static 'music/img/spotify-logo.svg' %}" alt="Spotify">
+            </a>
+            <a href="https://youtu.be/KOOhPfMbuIQ" class="am-link am-link-youtube">
+                <img src="{% static 'music/img/youtube-logo.svg' %}" alt="YouTube">
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container am-title">
+    <div class="row align-items-center justify-content-sm-start justify-content-center no-gutters">
+        <div class="col-auto">
+            <span class="year year-essentials">2019</span>
+        </div>
+        <div class="col-auto">
+            <div class="zh">精选集</div>
+            <div class="en">Essentials</div>
+        </div>
+    </div>
+</div>
+<div class="container am-content-secondary-grid">
+    <div class="row grid-row">
+        {% for music in music_list %}
+        <div class="col-md-6 grid-column">
+            <div class="container am-content am-content-secondary">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-sm-auto">
+                        <img src="{{ music.cover }}" alt="{{ music.album }}" class="cover">
                     </div>
-                </div>
-                <div class="col-sm-6">
-                    <img src="{% static 'music/img/aoy-title.svg' %}" class="annual-music-title">
-                    <div class="annual-music-item-box">
-                        <img src="{% static 'music/img/aoy-name-artist.svg' %}" class="annual-music-name-artist">
-                        <img src="https://image.zacjact1568.com/music/vae-xu-treasure-hunting.jpg" alt="寻宝游戏" class="annual-music-album-cover">
-                        <img src="{% static 'music/img/aoy-lyric.svg' %}" class="annual-music-lyric">
-                        <a href="http://music.163.com/album/71747023/" class="annual-music-link">
-                            <img src="{% static 'music/img/netease-cloud-music-logo.svg' %}">
-                        </a>
+                    <div class="col-md-8 col-sm-9">
+                        <div class="track">{{ music.track }}</div>
+                        <div class="title">{{ music.title }}</div>
+                        <div class="artist">{{ music.artist }}</div>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    <div class="annual-music-rest-link">
-        <a href="{% url 'posts:detail' 'annual-summary-on-music-listening-2018' %}">查看我 2018 年其他最喜爱的歌曲</a>
+</div>
+<div class="am-content-secondary-link">
+    <div class="explanation">Playlist Available On</div>
+    <a href="https://music.apple.com/us/playlist/essential-2019/pl.u-jV89b7LtXbodY7" class="am-link am-link-apple-music">
+        <img src="{% static 'music/img/apple-music-logo.svg' %}" alt="Apple Music">
+    </a>
+    <a href="https://open.spotify.com/playlist/1T0uoMHTzZOOhs4R7nFLeA?si=cjblAMLNTCq6gpvstMMK3A" class="am-link am-link-spotify">
+        <img src="{% static 'music/img/spotify-logo.svg' %}" alt="Spotify">
+    </a>
+    <div class="summary-link">
+        <a href="{% url 'posts:detail' 'annual-summary-on-music-listening-2019' %}">查看我的 2019 年度听歌总结</a>
     </div>
-    <div class="sub-website-link-bar">
-        <div class="container">
-            <div class="row justify-content-center no-gutters">
-                <div class="col-sm-4">
-                    <a href="{% url 'music:listen_memo' %}">
-                        <span>听歌记录</span>
-                    </a>
-                </div>
-                <div class="col-sm-4">
-                    <a href="{% url 'music:annual_summary' %}">
-                        <span>年度总结</span>
-                    </a>
-                </div>
+</div>
+<div class="sub-website-link-bar">
+    <div class="container">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-sm-4">
+                <a href="{% url 'music:listen_memo' %}">
+                    <span>听歌记录</span>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="{% url 'music:annual_summary' %}">
+                    <span>年度总结</span>
+                </a>
             </div>
         </div>
     </div>

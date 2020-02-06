@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
-from django.utils.timezone import localtime, now
+from django.utils.timezone import now
 
 
 # 音乐类
@@ -25,6 +25,23 @@ class Music(models.Model):
     link = models.CharField('链接', max_length=100, blank=True)
 
     time = models.DateTimeField('时间', default=now)
+
+    ESSENTIAL_CHOICES = [
+        (-1, "否"),
+        (0, "Intro"),
+        (1, "Track 1"),
+        (2, "Track 2"),
+        (3, "Track 3"),
+        (4, "Track 4"),
+        (5, "Track 5"),
+        (6, "Track 6"),
+        (7, "Track 7"),
+        (8, "Track 8"),
+        (9, "Track 7"),
+        (10, "Track 10"),
+        (11, "Outro")
+    ]
+    essential = models.SmallIntegerField("精选", default=-1, choices=ESSENTIAL_CHOICES)
 
     def __str__(self):
         return self.title
