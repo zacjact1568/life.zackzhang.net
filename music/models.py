@@ -37,7 +37,7 @@ class Music(models.Model):
         (6, "Track 6"),
         (7, "Track 7"),
         (8, "Track 8"),
-        (9, "Track 7"),
+        (9, "Track 9"),
         (10, "Track 10"),
         (11, "Outro")
     ]
