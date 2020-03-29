@@ -1,9 +1,14 @@
 from django.contrib import admin
-from .models import Music
+from .models import Song, AnnualSummary
 
 
-class MusicAdmin(admin.ModelAdmin):
+class SongAdmin(admin.ModelAdmin):
     list_display = ['title', 'artist', 'album', 'time', 'essential']
 
 
-admin.site.register(Music, MusicAdmin)
+class AnnualSummaryAdmin(admin.ModelAdmin):
+    list_display = ['year', 'song_of_this_year']
+
+
+admin.site.register(Song, SongAdmin)
+admin.site.register(AnnualSummary, AnnualSummaryAdmin)

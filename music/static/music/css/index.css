@@ -7,10 +7,6 @@
     font-size: 44px;
 }
 
-.am-title .year-song-of-this-year {
-    color: #F86A4B;
-}
-
 .am-title .zh {
     font-family: "Noto Serif SC", serif;
     font-size: 20px;
@@ -117,11 +113,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 40px;
-}
-
-.am-title .year-essentials,
-.am-content-secondary .track {
-    color: #7A3433;
 }
 
 .am-content-secondary-grid {

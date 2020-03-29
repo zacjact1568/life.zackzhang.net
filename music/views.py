@@ -1,28 +1,81 @@
 from django.views.generic import ListView
-from .models import Music
+from .models import Song, AnnualSummary
 from utils import pagination
 from posts.views import IndexView as PostsIndexView
 from posts.models import Post
 
 
+def complete_fragment(type_, fragment):
+    if type_ == "color":
+        return f"#{fragment}"
+    elif type_ == "cover":
+        return f"https://image.zacjact1568.com/music/{fragment}.jpg"
+    elif type_ == "apple_music":
+        return f"https://music.apple.com/us/{fragment}"
+    elif type_ == "spotify":
+        return f"https://open.spotify.com/{fragment}"
+    elif type_ == "youtube":
+        return f"https://youtu.be/{fragment}"
+    else:
+        raise ValueError(f"No type named \"{type_}\"")
+
+
 class IndexView(ListView):
 
-    model = Music
-    queryset = model.objects.filter(time__year=2019, essential__gt=-1)
-    ordering = "essential"
+    year = 2019
+    annual_summary = AnnualSummary.objects.get(year=year)
     template_name = "music/index.html"
+    # 由于 get_queryset 没有返回 QuerySet 对象
+    # 所以不能自动合成为 song_list，需要自行指定
+    # 或者 object_list 也可
+    context_object_name = "essentials"
 
     def get_queryset(self):
-        music_list = super().get_queryset()
-        for music in music_list:
-            music.cover = f"https://image.zacjact1568.com/music/{music.cover}.jpg"
-            music.track = self.model.ESSENTIAL_CHOICES[music.essential + 1][1]
-        return music_list
+        tracks = ["Intro"]
+        tracks.extend([f"Track {i}" for i in range(1, 11)])
+        tracks.append("Outro")
+        essentials = []
+        for track in tracks:
+            song = getattr(self.annual_summary, f"essentials_{track.lower().replace(' ', '_')}")
+            song.track = track
+            song.cover = complete_fragment("cover", song.cover)
+            essentials.append(song)
+        return essentials
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list)
+        # 年份
+        context["year"] = self.annual_summary.year
+        # 年度歌曲
+        song_of_this_year = self.annual_summary.song_of_this_year
+        song_of_this_year.color = complete_fragment("color", self.annual_summary.song_of_this_year_color)
+        song_of_this_year.cover = complete_fragment("cover", song_of_this_year.cover)
+        song_of_this_year.lyric = self.annual_summary.song_of_this_year_lyric
+        song_of_this_year.apple_music_link = complete_fragment(
+            "apple_music", self.annual_summary.song_of_this_year_link_apple_music)
+        song_of_this_year.spotify_link = complete_fragment(
+            "spotify", self.annual_summary.song_of_this_year_link_spotify)
+        youtube_link = self.annual_summary.song_of_this_year_link_youtube
+        if youtube_link != "":
+            song_of_this_year.show_youtube_link = True
+            song_of_this_year.youtube_link = complete_fragment("youtube", youtube_link)
+        else:
+            song_of_this_year.show_youtube_link = False
+        context["song_of_this_year"] = song_of_this_year
+        # 精选集
+        context["essentials_color"] = complete_fragment("color", self.annual_summary.essentials_color)
+        context["essentials_link_apple_music"] = complete_fragment(
+            "apple_music", self.annual_summary.essentials_link_apple_music)
+        context["essentials_link_spotify"] = complete_fragment(
+            "spotify", self.annual_summary.essentials_link_spotify)
+        # 文章链接
+        context["annual_summary_link"] = f"annual-summary-on-music-listening-{self.annual_summary.year}"
+        return context
 
 
 class ListenMemoView(ListView):
 
-    model = Music
+    model = Song
 
     template_name = 'music/listen_memo.html'
 
@@ -57,7 +110,7 @@ class ListenMemoView(ListView):
         context.update(pagination_data)
 
         # 更新时间
-        context.update({'update_time': Music.objects.first().time})
+        context.update({'update_time': Song.objects.first().time})
 
         return context
 

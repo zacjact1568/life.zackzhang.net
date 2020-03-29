@@ -11,6 +11,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap&text=INTROACK%201234567890U">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:700&display=swap&text=%e8%8e%ab%e5%ae%b0%e7%be%8a">
 <style type="text/css">
+.am-title .year-song-of-this-year {
+    color: {{ song_of_this_year.color }};
+}
+.am-title .year-essentials,
+.am-content-secondary .track {
+    color: {{ essentials_color }};
+}
 @font-face {
     font-family: "FZCuHeiSong-B-JF";
     font-style: normal;
@@ -28,7 +35,7 @@
 <div class="container am-title">
     <div class="row align-items-center justify-content-sm-start justify-content-center no-gutters">
         <div class="col-auto">
-            <span class="year year-song-of-this-year">2019</span>
+            <span class="year year-song-of-this-year">{{ year }}</span>
         </div>
         <div class="col-auto">
             <div class="zh">年度歌曲</div>
@@ -39,28 +46,30 @@
 <div class="container am-content am-content-primary">
     <div class="row align-items-center no-gutters">
         <div class="col-sm-auto">
-            <img src="https://image.zacjact1568.com/music/half-alive-now-not-yet.jpg" alt="Now, Not Yet" class="cover">
+            <img src="{{ song_of_this_year.cover }}" alt="{{ song_of_this_year.album }}" class="cover">
         </div>
         <div class="col-sm-auto">
-            <div class="title">still feel.</div>
-            <div class="artist">half•alive</div>
-            <div class="lyric">I still feel alive, when it is hopeless, I start to notice</div>
-            <a href="https://music.apple.com/us/album/still-feel/1467958791?i=1467959289" class="am-link am-link-apple-music">
+            <div class="title">{{ song_of_this_year.title }}</div>
+            <div class="artist">{{ song_of_this_year.artist }}</div>
+            <div class="lyric">{{ song_of_this_year.lyric }}</div>
+            <a href="{{ song_of_this_year.apple_music_link }}" class="am-link am-link-apple-music">
                 <img src="{% static 'music/img/apple-music-logo.svg' %}" alt="Apple Music">
             </a>
-            <a href="https://open.spotify.com/track/48XkVAagIoQHCsOlJtXUd5?si=mXbOWlOqS42Y1CAevlZQJg" class="am-link am-link-spotify">
+            <a href="{{ song_of_this_year.spotify_link }}" class="am-link am-link-spotify">
                 <img src="{% static 'music/img/spotify-logo.svg' %}" alt="Spotify">
             </a>
-            <a href="https://youtu.be/KOOhPfMbuIQ" class="am-link am-link-youtube">
+            {% if song_of_this_year.show_youtube_link %}
+            <a href="{{ song_of_this_year.youtube_link }}" class="am-link am-link-youtube">
                 <img src="{% static 'music/img/youtube-logo.svg' %}" alt="YouTube">
             </a>
+            {% endif %}
         </div>
     </div>
 </div>
 <div class="container am-title">
     <div class="row align-items-center justify-content-sm-start justify-content-center no-gutters">
         <div class="col-auto">
-            <span class="year year-essentials">2019</span>
+            <span class="year year-essentials">{{ year }}</span>
         </div>
         <div class="col-auto">
             <div class="zh">精选集</div>
@@ -70,17 +79,17 @@
 </div>
 <div class="container am-content-secondary-grid">
     <div class="row grid-row">
-        {% for music in music_list %}
+        {% for song in essentials %}
         <div class="col-md-6 grid-column">
             <div class="container am-content am-content-secondary">
                 <div class="row align-items-center no-gutters">
                     <div class="col-sm-auto">
-                        <img src="{{ music.cover }}" alt="{{ music.album }}" class="cover">
+                        <img src="{{ song.cover }}" alt="{{ song.album }}" class="cover">
                     </div>
                     <div class="col-md-8 col-sm-9">
-                        <div class="track">{{ music.track }}</div>
-                        <div class="title">{{ music.title }}</div>
-                        <div class="artist">{{ music.artist }}</div>
+                        <div class="track">{{ song.track }}</div>
+                        <div class="title">{{ song.title }}</div>
+                        <div class="artist">{{ song.artist }}</div>
                     </div>
                 </div>
             </div>
@@ -90,14 +99,14 @@
 </div>
 <div class="am-content-secondary-link">
     <div class="explanation">Playlist Available On</div>
-    <a href="https://music.apple.com/us/playlist/essential-2019/pl.u-jV89b7LtXbodY7" class="am-link am-link-apple-music">
+    <a href="{{ essentials_link_apple_music }}" class="am-link am-link-apple-music">
         <img src="{% static 'music/img/apple-music-logo.svg' %}" alt="Apple Music">
     </a>
-    <a href="https://open.spotify.com/playlist/1T0uoMHTzZOOhs4R7nFLeA?si=cjblAMLNTCq6gpvstMMK3A" class="am-link am-link-spotify">
+    <a href="{{ essentials_link_spotify }}" class="am-link am-link-spotify">
         <img src="{% static 'music/img/spotify-logo.svg' %}" alt="Spotify">
     </a>
     <div class="summary-link">
-        <a href="{% url 'posts:detail' 'annual-summary-on-music-listening-2019' %}">查看我的 2019 年度听歌总结</a>
+        <a href="{% url 'posts:detail' annual_summary_link %}">查看我的 {{ year }} 年度听歌总结</a>
     </div>
 </div>
 <div class="sub-website-link-bar">
