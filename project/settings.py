@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
+# production.py 只放在服务器端
+try:
+    from production import secret_key
+    # 生产环境
+    debug_mode = False
+except ImportError:
+    # 开发环境
+    debug_mode = True
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,10 +30,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6-xi@v5hu7^)z@==9%x4ca-h+99i=cj+f!!04$cpys_)y7to^='
+SECRET_KEY = "6-xi@v5hu7^)z@==9%x4ca-h+99i=cj+f!!04$cpys_)y7to^=" if debug_mode else secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = debug_mode
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'life.zackzhang.net']
 
@@ -134,14 +144,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'common', 'static')]
 
 # Django REST framework 全局设置
+
+drf_auth_classes = ["rest_framework.authentication.TokenAuthentication"]
+drf_rend_classes = ["rest_framework.renderers.JSONRenderer"]
+if debug_mode:
+    # 开发环境下方便浏览器查看
+    drf_auth_classes.insert(0, "rest_framework.authentication.BasicAuthentication")
+    drf_auth_classes.insert(1, "rest_framework.authentication.SessionAuthentication")
+    drf_rend_classes.append("rest_framework.renderers.BrowsableAPIRenderer")
+
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.TokenAuthentication",
-    ],
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAdminUser",
-    ],
-    "DEFAULT_RENDERER_CLASSES": [
-        "rest_framework.renderers.JSONRenderer",
-    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": drf_auth_classes,
+    "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAdminUser"],
+    "DEFAULT_RENDERER_CLASSES": drf_rend_classes,
 }
