@@ -13,7 +13,7 @@ class Song(models.Model):
 
     album = models.CharField("专辑", max_length=100)
 
-    year = models.IntegerField("年份", default=current_year)
+    year = models.IntegerField("年份")
 
     cover = models.CharField("封面", max_length=100)
 
