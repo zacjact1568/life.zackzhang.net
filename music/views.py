@@ -1,8 +1,11 @@
 from django.views.generic import ListView
-from .models import Song, AnnualSummary
+from rest_framework.generics import CreateAPIView
+
 from utils import pagination
 from posts.views import IndexView as PostsIndexView
 from posts.models import Post
+from .models import Song, AnnualSummary
+from .serializers import SongSerializer
 
 
 def complete_fragment(type_, fragment):
@@ -122,3 +125,9 @@ class AnnualSummaryView(PostsIndexView):
     # 将 file 字段开头为 annual-summary-on-music-listening- 的 Post 选出，这就是年度总结
     # i.e. 所有年度总结 Post 的 file 字段必须使用这样的格式
     queryset = Post.objects.filter(file__startswith='annual-summary-on-music-listening-')
+
+
+# CreateAPIView 会调用固定的 post 方法
+class AddSongView(CreateAPIView):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer

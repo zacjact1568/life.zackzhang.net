@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'about',
     'status',
     'music',
+    "rest_framework",
+    "rest_framework.authtoken",
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,16 @@ STATIC_URL = '/static/'
 
 # 除每个 app 中，静态文件的其他位置（用于放 app 共用的静态文件）
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'common', 'static')]
+
+# Django REST framework 全局设置
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAdminUser",
+    ],
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+    ],
+}
