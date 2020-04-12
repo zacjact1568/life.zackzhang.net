@@ -17,7 +17,7 @@ class Comment(models.Model):
     time = models.DateTimeField('时间', auto_now_add=True)
 
     # 评论属于哪篇文章
-    post = models.ForeignKey('posts.Post', on_delete=models.CASCADE, verbose_name='文章')
+    post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, verbose_name='文章')
 
     def __str__(self):
         return self.content[:20]
