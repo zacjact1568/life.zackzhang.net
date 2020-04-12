@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('posts', '0001_initial'),
+        ('blog', '0001_initial'),
     ]
 
     operations = [
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('website', models.URLField(blank=True, verbose_name='网站')),
                 ('content', models.TextField(verbose_name='评论')),
                 ('time', models.DateTimeField(auto_now_add=True, verbose_name='时间')),
-                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='posts.Post', verbose_name='文章')),
+                ('post', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='blog.Post', verbose_name='文章')),
             ],
             options={
                 'verbose_name': '评论',
