@@ -2,8 +2,8 @@ from django.views.generic import ListView
 from rest_framework.generics import CreateAPIView
 
 from utils import pagination
-from posts.views import IndexView as PostsIndexView
-from posts.models import Post
+from blog.views import IndexView as PostsIndexView
+from blog.models import Post
 from .models import Song, AnnualSummary
 from .serializers import SongSerializer
 
