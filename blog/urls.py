@@ -6,6 +6,6 @@ app_name = 'blog'
 urlpatterns = [
     # 匹配 /
     path('', views.IndexView.as_view(), name='index'),
-    # 匹配 /post/<file>.html
-    path('post/<file>.html', views.PostView.as_view(), name='detail'),
+    # 匹配 /post/<label>.html
+    path('post/<label>.html', views.PostView.as_view(), name='detail'),
 ]

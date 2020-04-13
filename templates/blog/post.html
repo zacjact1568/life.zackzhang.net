@@ -14,7 +14,7 @@
     <header>
         <div class="post-title">{{ post.title }}</div>
         <div class="post-time">
-            <time datetime="{{ post.date|date:"Y-m-d" }}">{{ post.date|date:"Y-m-d" }}</time>
+            <time datetime="{{ post.created_at|date:"Y-m-d" }}">{{ post.created_at|date:"Y-m-d" }}</time>
         </div>
     </header>
     <div class="post-content">

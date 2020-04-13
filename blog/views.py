@@ -43,9 +43,9 @@ class PostView(DetailView):
     template_name = 'blog/post.html'
     context_object_name = 'post'
     # 指定 URL 中模板的参数
-    slug_url_kwarg = 'file'
+    slug_url_kwarg = 'label'
     # 指定 Post 中哪个字段对应 URL 中模板的参数
-    slug_field = 'file'
+    slug_field = 'label'
 
     def get_object(self, queryset=None):
         # 对 content 进行 Markdown 渲染

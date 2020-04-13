@@ -15,7 +15,7 @@
                 <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
             </div>
             <div class="post-list-time">
-                <time datetime="{{ post.date|date:"Y-m-d" }}">{{ post.date|date:"Y-m-d" }}</time>
+                <time datetime="{{ post.created_at|date:"Y-m-d" }}">{{ post.created_at|date:"Y-m-d" }}</time>
             </div>
         </header>
         <div class="post-list-excerpt">
