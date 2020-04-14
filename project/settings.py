@@ -157,4 +157,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": drf_auth_classes,
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAdminUser"],
     "DEFAULT_RENDERER_CLASSES": drf_rend_classes,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 如果低于 10 项就不分页
+    'PAGE_SIZE': 10,
 }

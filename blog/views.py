@@ -1,9 +1,11 @@
 import markdown
 from django.views.generic import ListView, DetailView
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from comment.forms import ItemForm
 from utils import pagination
 from .models import Post
+from .serializers import PostListSerializer, PostSerializer
 
 
 class IndexView(ListView):
@@ -68,3 +70,20 @@ class PostView(DetailView):
         item_list = self.object.item_set.all()
         context.update({'form': form, 'item_list': item_list, 'enable_comment': False})
         return context
+
+
+class GetPostListView(ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostListSerializer
+
+
+class GetPostView(RetrieveAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    # 指定 Post 中哪个字段对应 URL 中模板的参数
+    lookup_field = 'label'
+    # 指定 URL 中模板的参数
+    # 默认为 pk，即主键
+    # 也就是说，可以不指定，但 URL 模板参数须设定为 pk
+    # 便于理解，还是显式设置为 label
+    lookup_url_kwarg = 'label'
