@@ -1,0 +1,75 @@
+.comment {
+    padding: 0 30px;
+}
+
+.comment-list-title,
+.comment-form-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.comment-list {
+    margin-top: 15px;
+}
+
+.comment-item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.comment-item .comment-name,
+.comment-item .comment-time {
+    color: #777;
+    font-size: 14px;
+}
+
+/**
+ * after 指示在添加此修饰符的元素（nickname）后部添加 content 中的内容（一个点）
+ * :after 是 CCS2 中的用法，::after 是 CCS3 中的用法
+ */
+.comment-item .comment-name:after {
+    content: ' ·';
+}
+
+.comment-item .comment-content {
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+.comment-form-title {
+    margin-top: 20px;
+}
+
+.comment-form {
+    margin-top: 15px;
+}
+
+.comment-form input {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 100%;
+    transition: 0.4s border-color linear;
+}
+
+.comment-form textarea {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 183px;
+    transition: 0.4s border-color linear;
+}
+
+.comment-form .comment-submit-button {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 5px 10px;
+}

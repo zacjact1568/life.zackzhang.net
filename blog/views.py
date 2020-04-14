@@ -1,8 +1,9 @@
 import markdown
 from django.views.generic import ListView, DetailView
-# from comments.forms import CommentForm
-from .models import Post
+
+from comment.forms import ItemForm
 from utils import pagination
+from .models import Post
 
 
 class IndexView(ListView):
@@ -59,11 +60,11 @@ class PostView(DetailView):
                                          ])
         return post
 
-    # def get_context_data(self, **kwargs):
-    #     # 将评论列表和表单传递给模板
-    #     context = super(PostView, self).get_context_data(**kwargs)
-    #     form = CommentForm()
-    #     # 获取这篇 post 下的全部评论
-    #     comment_list = self.object.comment_set.all()
-    #     context.update({'form': form, 'comment_list': comment_list, 'enable_comments': False})
-    #     return context
+    def get_context_data(self, **kwargs):
+        # 将评论列表和表单传递给模板
+        context = super().get_context_data(**kwargs)
+        form = ItemForm()
+        # 获取这篇 post 下的全部评论
+        item_list = self.object.item_set.all()
+        context.update({'form': form, 'item_list': item_list, 'enable_comment': False})
+        return context
