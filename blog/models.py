@@ -14,7 +14,7 @@ class Post(models.Model):
 
     updated_at = models.DateTimeField('更新于', auto_now=True)
 
-    label = models.CharField('标签', max_length=100)
+    label = models.CharField('标签', primary_key=True, max_length=100)
 
     def __str__(self):
         return self.title
