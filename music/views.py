@@ -26,12 +26,15 @@ def complete_fragment(type_, fragment):
 class IndexView(ListView):
 
     year = 2019
-    annual_summary = AnnualSummary.objects.get(year=year)
     template_name = "music/index.html"
     # 由于 get_queryset 没有返回 QuerySet 对象
     # 所以不能自动合成为 song_list，需要自行指定
     # 或者 object_list 也可
     context_object_name = "essentials"
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.annual_summary = AnnualSummary.objects.get(year=self.year)
 
     def get_queryset(self):
         tracks = ["Intro"]
