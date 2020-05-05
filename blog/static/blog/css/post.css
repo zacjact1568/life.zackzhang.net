@@ -8,7 +8,6 @@
 
 .post-title {
     font-size: 26px;
-    font-weight: 500;
 }
 
 .post-time {
@@ -124,30 +123,15 @@
 .post-content code,
 .post-content pre span {
     font-family:
-            /* 西文 */
-
-            /* 来自 Google Fonts */
-            'Roboto Mono',
-            /* macOS 预装 */
+            'JetBrains Mono',
+            'Fira Code',
             'Menlo',
-            /* Windows 预装 */
             'Consolas',
-
-            /* 中文 */
-
-            /* 苹方 (OSX >= 10.11 || iOS >= 9) */
+            'Roboto Mono',
+            'Source Han Sans SC',
             'PingFang SC',
-            /* 冬青黑体 (OSX >= 10.6) */
-            'Hiragino Sans GB',
-            /* 华文黑体 (OSX < 10.6 || iOS < 9) */
-            'STHeiti',
-            /* 微软雅黑 (Windows >= Vista) */
             'Microsoft YaHei',
-            /* 黑体 (Windows < Vista) */
-            'SimHei',
-            /* 文泉驿微米黑 (Linux) */
-            'WenQuanYi Micro Hei',
-
+            'Noto Sans CJK SC',
             monospace;
 }
 

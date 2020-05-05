@@ -2,43 +2,14 @@
 
 body {
     font-family:
-            /* 思源黑体 (安装) */
-            'Source Han Sans SC',
-            'Source Han Sans CN',
-            'Noto Sans CJK SC',
-
-            /*
-             * 在 Apple 系设备的 Webkit 内核浏览器中使用默认字体
-             * 中：苹方，西：San Francisco
-             */
-            -apple-system,
-            /* 让 Chrome 支持上述属性 */
-            BlinkMacSystemFont,
-
-            /* 西文 */
-
-            /* 来自 Google Fonts */
-            'Noto Sans',
-            /* macOS 预装 */
+            'Heebo',
             'Helvetica Neue',
-            /* Windows 预装 */
             'Arial',
-
-            /* 中文 */
-
-            /* 苹方 (OSX >= 10.11 || iOS >= 9) */
+            'Roboto',
+            'Source Han Sans SC',
             'PingFang SC',
-            /* 冬青黑体 (OSX >= 10.6) */
-            'Hiragino Sans GB',
-            /* 华文黑体 (OSX < 10.6 || iOS < 9) */
-            'STHeiti',
-            /* 微软雅黑 (Windows >= Vista) */
             'Microsoft YaHei',
-            /* 黑体 (Windows < Vista) */
-            'SimHei',
-            /* 文泉驿微米黑 (Linux) */
-            'WenQuanYi Micro Hei',
-
+            'Noto Sans CJK SC',
             sans-serif;
     outline: none;
 }
@@ -66,6 +37,13 @@ body {
 }
 
 .header-title {
+    font-family:
+            'Source Han Sans SC',
+            'Noto Sans CJK SC',
+            'Noto Sans SC',
+            'PingFang SC',
+            'Microsoft YaHei',
+            sans-serif;
     font-size: 24px;
     font-weight: bold;
 }
