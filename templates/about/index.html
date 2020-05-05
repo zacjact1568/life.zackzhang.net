@@ -5,43 +5,47 @@
 {% block title %}关于 | 全杰是也{% endblock title %}
 
 {% block css %}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro">
 <link rel="stylesheet" href="{% static 'about/css/index.css' %}">
 {% endblock %}
 
 {% block main %}
-<article class="about">
-    <header>
-        <div class="about-title">关于</div>
-        <div class="about-subtitle">全杰是也</div>
-    </header>
-    <div class="about-content">
-        <img src="{% static 'about/img/back.jpg' %}" alt="全杰是也" title="茶卡盐湖" class="back">
-        <p>来自四川德阳，电子科技大学计算机科学与工程学院硕士研究生。</p>
-        <h1>爱好</h1>
-        <div class="horizontal-icon-link-bar">
-            <a href="https://code.zackzhang.net"><span class="fas fa-code"></span></a>
-            <a href="{% url 'music:index' %}"><span class="fas fa-music"></span></a>
-            <a href="javascript:alert('Under construction...');"><span class="fas fa-camera"></span></a>
-            <a href="javascript:alert('Under construction...');"><span class="fas fa-plane"></span></a>
-        </div>
-        <h1>Find Me</h1>
-        <div class="horizontal-icon-link-bar">
-            <a href=mailto:zxjue@outlook.com><span class="fas fa-envelope"></span></a>
-            <a href="https://twitter.com/zacjact1568"><span class="fab fa-twitter"></span></a>
-            <a href="https://www.instagram.com/zacjact1568/"><span class="fab fa-instagram"></span></a>
-            <a href="https://t.me/zacjact1568"><span class="fab fa-telegram-plane"></span></a>
-        </div>
-        <h1>致谢</h1>
-        <div class="thanks-link-bar">
-            <div><a href="https://www.djangoproject.com"><img src="{% static 'about/img/django.svg' %}" class="django" alt="Django"></a></div>
-            <div><a href="http://getbootstrap.com"><img src="{% static 'about/img/bootstrap.png' %}" class="bootstrap" alt="Bootstrap"></a></div>
-            <div><a href="https://fontawesome.com"><img src="{% static 'about/img/font-awesome.png' %}" class="font-awesome" alt="Font Awesome"></a></div>
-        </div>
-        <div class="vultr">
-            <a href="https://www.vultr.com/?ref=7260027"><img src="{% static 'about/img/vultr.svg' %}" alt="Vultr"></a>
-        </div>
-        <div class="witness"><a href="javascript:alert('Under construction...');">Will you be my witness?</a></div>
+<div class="about-title">
+    <div class="primary">关于</div>
+    <div class="secondary">全杰是也</div>
+</div>
+<div class="about-content">
+    <img src="{% static 'about/img/back.jpg' %}" alt="茶卡盐湖" title="茶卡盐湖" class="head-image">
+    <div class="head-image-description">
+        <div class="primary">茶卡盐湖</div>
+        <div class="secondary">青海省海西蒙古族藏族自治州<br>2017 年 7 月</div>
     </div>
-</article>
+    <div class="introduction">
+        来自四川德阳，本科毕业于电子科技大学信息与软件工程学院，目前在电子科技大学计算机科学与工程学院攻读硕士研究生，爱好是科技、编程、音乐、摄影。
+    </div>
+    <div class="section-title">找到我</div>
+    <div class="section-content">
+        <div class="contact-link-item">
+            <a href=mailto:zxjue@outlook.com class="email-link"><span class="fas fa-envelope"></span></a>
+            <span>电子邮件：zxjue@outlook.com</span>
+        </div>
+        <div class="contact-link-item">
+            <a href="https://twitter.com/zacjact1568" class="twitter-link"><span class="fab fa-twitter"></span></a>
+            <span>Twitter：@zacjact1568</span>
+        </div>
+        <div class="contact-link-item">
+            <a href="https://t.me/zacjact1568" class="telegram-link"><span class="fab fa-telegram-plane"></span></a>
+            <span>Telegram：@zacjact1568</span>
+        </div>
+        <div class="contact-link-item">
+            <a href="https://code.zackzhang.net" class="code-website-link"><span class="fas fa-code"></span></a>
+            <span>Code 网站：code.zackzhang.net</span>
+        </div>
+    </div>
+    <div class="section-title">关于本站</div>
+    <div class="section-content support-link-bar">
+        <a href="https://www.djangoproject.com" class="django-link"><img src="{% static 'about/img/django.svg' %}" alt="Django"></a>
+        <a href="https://www.vultr.com/?ref=7260027" class="vultr-link"><img src="{% static 'about/img/vultr.svg' %}" alt="Vultr"></a>
+    </div>
+    <div class="support-description">使用 Django Web Framework 搭建，托管于 Vultr 美国 Los Angeles 机房。</div>
+</div>
 {% endblock main %}
