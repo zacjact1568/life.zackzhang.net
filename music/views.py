@@ -25,7 +25,7 @@ def complete_fragment(type_, fragment):
 
 class IndexView(ListView):
 
-    year = 2019
+    year = 2020
     template_name = "music/index.html"
     # 由于 get_queryset 没有返回 QuerySet 对象
     # 所以不能自动合成为 song_list，需要自行指定
