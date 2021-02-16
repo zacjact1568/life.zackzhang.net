@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MaxLengthValidator
-from django.utils.timezone import now
 
 from utils.time import current_year
 
@@ -19,7 +18,7 @@ class Song(models.Model):
 
     link = models.CharField("链接", max_length=100, blank=True)
 
-    time = models.DateTimeField("时间", default=now)
+    time = models.DateTimeField("时间", auto_now_add=True)
 
     essential = models.BooleanField("精选", default=False)
 
